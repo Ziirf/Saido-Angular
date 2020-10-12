@@ -1,0 +1,50 @@
+#colorWrap{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    .colorWheel{
+      display: block;
+    }
+  
+    #colorPalette{
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      
+      .sample{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0px 10px;
+        border: 1px solid #888;
+  
+        &:active {
+          outline: none;
+          border: none;
+        }
+  
+        &:focus {outline:0;}
+      }
+    }
+}
+
+#power-toggle{
+  position: absolute;
+  border-radius: 5px;
+  border: 2px #000 solid;
+  bottom: 20px;
+  height: 35px;
+  width: 120px;
+  background: linear-gradient(90deg, rgba(255,123,123,1) 50%, rgba(123,255,123,1) 50%);
+
+  #power-toggle-indicator{
+      position: relative;
+      height: 33px;
+      width: 58px;
+      border-radius: 5px;
+      background-color: #000;
+  }
+}
