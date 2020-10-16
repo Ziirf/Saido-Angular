@@ -8,18 +8,21 @@ import iro from '@jaames/iro';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {}
-
   public colorPicker : iro.ColorPicker;
+  public colors : Array<iro.Color>;
 
   ngOnInit(): void {
     // Instanciates the Colorwheel.
+    console.log("Du burde huske at låse din computer");
     this.colorPicker = iro.ColorPicker("#colorWheel", {
       borderWidth: 1,
-      borderColor: "rgb(0, 0, 0)",
+      borderColor: "#E3E3E3",
       color: new iro.Color({h:0, s:0, v:100})
     });
     
+    this.colors = new Array<iro.Color>();
+    this.colors.push(new iro.Color({h: 0, s: 0, v:100}));
+
     // Event that fires after a color is changed in the Colorwheel.
     this.colorPicker.on(["color:change"], this.colorChanged);
   }
@@ -28,11 +31,15 @@ export class HomeComponent implements OnInit {
     var hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
     var sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
     var val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
-  
+
     // Sends the request to the ESP32 over URL
     var request = new XMLHttpRequest();
     request.open('Get',`?h=${hue}&s=${sat}&v=${val}`);
     request.send();
+  }
+  
+  addColor() {
+    this.colors.push(new iro.Color(this.colorPicker.color));
   }
 }
 

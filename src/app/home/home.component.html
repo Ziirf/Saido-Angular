@@ -1,6 +1,20 @@
 <div id="colorWrap">
-    <div id="colorWheel"></div>
-    <div id="colorPalette">
+  <div id="colorWheel">
 
+  </div>
+  
+  <div id="colorPalette">
+    <div *ngFor="let color of colors">
+      <ng-container *ngTemplateOutlet="tempColor;context:colors">
+
+      </ng-container>
+    </div>
+    <div *ngIf="colors?.length <= 5">
+      <button (click)="addColor()">Click me</button>
     </div>
   </div>
+</div>
+
+<ng-template #tempColor let-color='color'>
+    <p>{{ color.hsv.h }}</p>
+</ng-template>

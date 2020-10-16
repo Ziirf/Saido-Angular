@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PatternsComponent } from './patterns/patterns.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ColorPaletteComponent } from './color-palette/color-palette.component';
+import { ColorPaletteDirective } from './color-palette.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PatternsComponent,
-    SettingsComponent
+    SettingsComponent,
+    ColorPaletteComponent,
+    ColorPaletteDirective
   ],
   imports: [
     BrowserModule,
