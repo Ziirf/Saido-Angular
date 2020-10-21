@@ -10,23 +10,24 @@
   }
 
   #colorPalette{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    
+    display: grid;
+    overflow: auto;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 35px);
+    grid-gap: 3px;
+
+    width: 300px;
+    margin-top: 15px;
+
     .sample{
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin: 0px 10px;
-      border: 1px solid #888;
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #000;
 
-      &:active {
-        outline: none;
-        border: none;
-      }
+      &:active { outline: none; border: none; }
 
-      &:focus {outline:0;}
+      &:focus { outline:0; }
     }
   }
 }
