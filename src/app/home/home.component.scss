@@ -1,4 +1,39 @@
 #colorWrap{
+  height: 100%;
+
+  margin-top: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+
+  .colorWheel{
+    display: block;
+  }
+
+  #colorPalette{
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 35px);
+    grid-gap: 3px;
+
+    width: 300px;
+    margin-top: 15px;
+
+    .sample{
+      display: block;
+      border-radius: 5px;
+      border: 1px solid #000;
+
+      &:active { outline: none; border: none; }
+
+      &:focus { outline:0; }
+    }
+  }
+}
+
+
+/*#colorWrap{
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -30,4 +65,4 @@
       &:focus { outline:0; }
     }
   }
-}
+}*/

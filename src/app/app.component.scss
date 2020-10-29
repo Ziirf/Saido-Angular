@@ -55,7 +55,7 @@ body{
         background-color: $BackgroundColor;
         width: $WindowWidth;
 
-        #hamburger{
+        #burger-menu{
             display: none;
         }
     }
@@ -71,6 +71,7 @@ body{
     #power-toggle{
         align-self: center;
         justify-self: center;
+        grid-column-start: 2;
     }
 }
 

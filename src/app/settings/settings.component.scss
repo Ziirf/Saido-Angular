@@ -1,0 +1,9 @@
+.settings-container{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
+    
+    height: 80%;
+
+    padding: 20px;
+}

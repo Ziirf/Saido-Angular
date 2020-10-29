@@ -24,22 +24,20 @@ export class HomeComponent implements OnInit {
     this.colors = new Array<iro.Color>();
 
     // Event that fires after a color is changed in the Colorwheel.
-    this.colorPicker.on(["color:change"], this.colorChanged);
-  }
-
-  colorChanged(color: iro.Color){
-    var hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
-    var sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
-    var val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
-    AppComponent.latestRequest = `?0=${convertToHex(hue) + convertToHex(sat) + convertToHex(val)}`;
-    
-    // Sends the request to the ESP32 over URL
-    if(AppComponent.powerStatus){
-      var request = new XMLHttpRequest();
+    this.colorPicker.on(["color:change"], function(color: iro.Color){
+      let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
+      let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
+      let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
+      AppComponent.latestRequest = `?0=${colorToHex(hue, sat, val)}`;
       
-      request.open('POST', AppComponent.latestRequest);
-      request.send();
-    }
+      // Sends the request to the ESP32 over URL
+      if(AppComponent.powerStatus){
+        let request = new XMLHttpRequest();
+        
+        request.open('POST', AppComponent.latestRequest);
+        request.send();
+      }
+    });
   }
   
   // Adds the selected color from the colorwheel to the colorArray.
@@ -53,16 +51,20 @@ export class HomeComponent implements OnInit {
   }
 }
 
-function convertToHex(input: number){
+function intToHex(input: number){
   if(input > 255){
     return null;
   }
 
-  let output: string = input.toString(16).toUpperCase();
-  if (output.length == 1)
-    output = "0" + output;
+  return input.toString(16).padStart(2, '0').toUpperCase();
+}
 
-  return output;
+function colorToHex(h: number, s: number, v: number){
+  if(h > 255 || s > 255 || v > 255){
+    return null;
+  }
+
+  return new String(h.toString(16).padStart(2, '0') + s.toString(16).padStart(2, '0') + v.toString(16).padStart(2, '0')).toUpperCase();
 }
 
 /*  Notes:
@@ -72,3 +74,6 @@ function convertToHex(input: number){
     which we get from the iro.Color needs to be converted before sending it to the
     ESP32, as the more calculations that can be done on the client before sending it
     to the ESP32 the better.    */
+
+
+// TODO: Optimize timer to limit post requests.

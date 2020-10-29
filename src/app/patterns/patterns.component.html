@@ -1,1 +1,5 @@
-<p>patterns works!</p>
+<div class="pattern-container">
+    <ng-template ngFor let-pattern [ngForOf]="patternsArray">
+        <button (click)="clickPattern(pattern)">{{ pattern.name }}</button>
+    </ng-template>
+</div>
