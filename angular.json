@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "LEDProject": {
+    "Saido": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/LEDProject",
+            "outputPath": "dist/Saido",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "LEDProject:build"
+            "browserTarget": "Saido:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "LEDProject:build:production"
+              "browserTarget": "Saido:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "LEDProject:build"
+            "browserTarget": "Saido:build"
           }
         },
         "test": {
@@ -114,15 +114,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "LEDProject:serve"
+            "devServerTarget": "Saido:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "LEDProject:serve:production"
+              "devServerTarget": "Saido:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "LEDProject"
+  "defaultProject": "Saido"
 }
