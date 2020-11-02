@@ -6,13 +6,23 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PatternsComponent } from './patterns/patterns.component';
 import { SettingsComponent } from './settings/settings.component';
+import { RebootComponent } from './settings/reboot/reboot.component';
+import { WifiComponent } from './settings/wifi/wifi.component';
+import { LedCountComponent } from './settings/led-count/led-count.component';
+import { ApperanceComponent } from './settings/apperance/apperance.component';
+import { EditPaletteComponent } from './settings/edit-palette/edit-palette.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PatternsComponent,
-    SettingsComponent
+    SettingsComponent,
+    RebootComponent,
+    WifiComponent,
+    LedCountComponent,
+    ApperanceComponent,
+    EditPaletteComponent
   ],
   imports: [
     BrowserModule,

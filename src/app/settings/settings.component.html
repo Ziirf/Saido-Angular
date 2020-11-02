@@ -1,7 +1,18 @@
 <div class="settings-container">
-    <button>Reboot</button>
-    <button>Wifi SSID & Password</button>
-    <button>LED count</button>
-    <button>Apperance</button>
-    <button>Edit Palette</button>
+    <button (click)="popUp='reboot'">Reboot</button>
+    <button (click)="popUp='wifi'">Wifi SSID & Password</button>
+    <button (click)="popUp='led'">LED count</button>
+    <button (click)="popUp='apperance'">Apperance</button>
+    <button (click)="popUp='palette'">Edit Palette</button>
+    <div id="pop-up-container" [ngSwitch]="popUp">
+        <app-reboot *ngSwitchCase="'reboot'"></app-reboot>
+        <app-wifi *ngSwitchCase="'wifi'"></app-wifi>
+        <app-led-count *ngSwitchCase="'led'"></app-led-count>
+        <app-apperance *ngSwitchCase="'apperance'"></app-apperance>
+        <app-edit-palette *ngSwitchCase="'palette'"></app-edit-palette>
+    </div>
 </div>
+
+<ng-template #reboot>
+    <app-reboot></app-reboot>
+</ng-template>

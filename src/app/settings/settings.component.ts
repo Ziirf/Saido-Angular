@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  constructor() { }
+  popUp: string;
 
   ngOnInit(): void {
+    
   }
-
 }

@@ -1,0 +1,11 @@
+.apperance-container{
+    background-color: #FFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+button{
+    min-height: 50px;
+    margin: 20px;
+}

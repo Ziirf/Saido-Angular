@@ -27,6 +27,8 @@ export class PatternsComponent implements OnInit {
   }
 
   private clickPattern(pattern: PatternModel){
-    console.log(pattern);
+    var request = new XMLHttpRequest();
+      request.open('POST',`?${ pattern.id }`);
+      request.send();
   }
 }

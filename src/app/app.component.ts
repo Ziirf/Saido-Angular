@@ -12,7 +12,7 @@ export class AppComponent{
 
   constructor(){
     // laver to event listeners som tjekker på "Click" og "Resize"
-    document.addEventListener('click', this.menuToggle);
+    document.addEventListener('click', this.toggleMenu);
     window.addEventListener('resize', this.windowSizeChange);
   }
 
@@ -33,7 +33,7 @@ export class AppComponent{
 
   // viser/skjuler navigations baren hvis den bliver trykket på mens vinduet -
   // er under 500px bred.
-  menuToggle(e: any){
+  toggleMenu(e: any){
     if(window.innerWidth <= 550){
       let target = e.target || e.srcElement || e.currentTarget;
   
