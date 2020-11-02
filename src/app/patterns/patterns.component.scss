@@ -1,12 +1,17 @@
 .pattern-container{
-    display: inline-flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 10px;
     
-    height: 50%;
+    height: 80%;
     padding: 20px;
 
-    button{
-        box-sizing: border-box;
-        width: 25%;
+    div{
+        background: #CCC;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
