@@ -1,17 +1,5 @@
 <div class="pattern-container">
-    <!--<ng-template ngFor let-pattern [ngForOf]="patternsArray">
-        <div (click)="clickPattern(pattern)">{{ pattern.name }}</div>
-    </ng-template>-->
-    <button id="btn1">test 1</button>
-    <button id="btn2">test 2</button>
-    <button id="btn3">test 3</button>
-    <button id="btn4">test 4</button>
-    <button id="btn5">test 5</button>
-    <button id="btn6">test 6</button>
-    <button id="btn7">test 7</button>
-    <button id="btn8">test 8</button>
-    <button id="btn9">test 9</button>
-    <button id="btn10">test 10</button>
-    <button id="btn11">test 11</button>
-    <button id="btn12">test 12</button>
+    <ng-template ngFor let-pattern [ngForOf]="patternsArray">
+        <button (click)="clickPattern(pattern)">{{ pattern.name }}</button>
+    </ng-template>
 </div>
