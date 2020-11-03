@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
       let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
       let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
       let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
-      AppComponent.latestRequest = `?0=${colorToHex(hue, sat, val)}`;
+      AppComponent.latestRequest = `?1=${colorToHex(hue, sat, val)}`;
       
       // Sends the request to the ESP32 over URL
       if(AppComponent.powerStatus){

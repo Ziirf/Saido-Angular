@@ -25,7 +25,7 @@ export class AppComponent{
     }
     else{
       var request = new XMLHttpRequest();
-      request.open('POST',`?0=000000`);
+      request.open('POST',`?0`);
       request.send();
       AppComponent.powerStatus = false;
     }

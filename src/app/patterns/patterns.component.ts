@@ -12,18 +12,18 @@ export class PatternsComponent implements OnInit {
 
   ngOnInit(): void {
     this.patternsArray = new Array<PatternModel>();
-    this.patternsArray.push({ id: 1,  name: "Rainbow"    });
-    this.patternsArray.push({ id: 2,  name: "Cyclone"    });
-    this.patternsArray.push({ id: 3,  name: "Jungle"     });
-    this.patternsArray.push({ id: 4,  name: "Fireworks"  });
-    this.patternsArray.push({ id: 5,  name: "Balls"      });
-    this.patternsArray.push({ id: 6,  name: "Strobe"     });
-    this.patternsArray.push({ id: 7,  name: "Meteor"     });
-    this.patternsArray.push({ id: 8,  name: "Half-Light" });
-    this.patternsArray.push({ id: 9,  name: "Blend"      });
-    this.patternsArray.push({ id: 10, name: "Fire"       });
-    this.patternsArray.push({ id: 11, name: "Disco"      });
-    this.patternsArray.push({ id: 12, name: "Siren"      });
+    this.patternsArray.push({ id: 11,  name: "Rainbow"    });
+    this.patternsArray.push({ id: 12,  name: "Cyclone"    });
+    this.patternsArray.push({ id: 13,  name: "Jungle"     });
+    this.patternsArray.push({ id: 14,  name: "Fireworks"  });
+    this.patternsArray.push({ id: 15,  name: "Balls"      });
+    this.patternsArray.push({ id: 16,  name: "Strobe"     });
+    this.patternsArray.push({ id: 17,  name: "Meteor"     });
+    this.patternsArray.push({ id: 18,  name: "Half-Light" });
+    this.patternsArray.push({ id: 19,  name: "Blend"      });
+    this.patternsArray.push({ id: 20,  name: "Fire"       });
+    this.patternsArray.push({ id: 21,  name: "Disco"      });
+    this.patternsArray.push({ id: 22,  name: "Siren"      });
   }
 
   private clickPattern(pattern: PatternModel){
