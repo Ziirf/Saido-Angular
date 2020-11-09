@@ -3,3 +3,9 @@
         <button (click)="clickPattern(pattern)">{{ pattern.name }}</button>
     </ng-template>
 </div>
+<div>
+    <ng-template [ngIf]="selectedPattern">
+        <p>{{selectedPattern.id}}</p>
+    </ng-template>
+    <app-slider min=0 max=200 startingValue=50></app-slider>
+</div>

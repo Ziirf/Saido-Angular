@@ -1,27 +1,35 @@
 .pattern-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-gap: 10px;
-    
-    height: 500px;
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 2px;
+    height: 60%;
+
     padding: 20px;
 
-    div{
+    button{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        
+    }
+
+    /*div{
+        display: grid;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
         background: #CCC;
         border: 1px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
-    }
+    }*/
 }
 
-button{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-
-#btn1{
+:host{
     height: 100%;
 }

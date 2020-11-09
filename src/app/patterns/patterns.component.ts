@@ -9,6 +9,7 @@ import '../models/patterns.model';
 export class PatternsComponent implements OnInit {
 
   patternsArray : Array<PatternModel>
+  selectedPattern : PatternModel;
 
   ngOnInit(): void {
     this.patternsArray = new Array<PatternModel>();
@@ -27,6 +28,7 @@ export class PatternsComponent implements OnInit {
   }
 
   private clickPattern(pattern: PatternModel){
+    this.selectedPattern = pattern;
     var request = new XMLHttpRequest();
       request.open('POST',`?${ pattern.id }`);
       request.send();
