@@ -1,22 +1,26 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.scss']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
 
-  @Input()
-  min: number = 0;
+  @Input("min")
+  public minValue : number;
 
-  @Input()
-  max: number = 100;
+  @Input("max")
+  public maxValue : number;
 
-  @Input()
-  value: number = 80;
+  @Input("value")
+  public selectedValue: number;
 
-  ngOnInit(): void {
+  @Output() valueChangedEvent = new EventEmitter<number>();
+  
+  valueChanged(input: number) {
+    this.selectedValue = input;
+    this.valueChangedEvent.emit(this.selectedValue);
   }
 
 }

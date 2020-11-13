@@ -10,8 +10,8 @@ import iro from '@jaames/iro';
 export class HomeComponent implements OnInit {
   // Variables of this class.
   colorPicker : iro.ColorPicker;
-  colors : Array<iro.Color>;
-
+  colors: Array<iro.Color>;
+  
   ngOnInit(): void {
     // Instanciates the Colorwheel.
     this.colorPicker = iro.ColorPicker("#colorWheel", {
