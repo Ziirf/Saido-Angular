@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { AppComponent } from '../app.component';
 import iro from '@jaames/iro';
 
@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   // Variables of this class.
   colorPicker : iro.ColorPicker;
   colors: Array<iro.Color>;
+
+  constructor(private ngZone: NgZone) { }
   
   ngOnInit(): void {
     // Instanciates the Colorwheel.
@@ -24,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.colors = new Array<iro.Color>();
 
     // Event that fires after a color is changed in the Colorwheel.
-    this.colorPicker.on(["color:change"], function(color: iro.Color){
+    /*this.colorPicker.on(["color:change"], function(color: iro.Color){
       let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
       let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
       let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
@@ -37,9 +39,31 @@ export class HomeComponent implements OnInit {
         request.open('POST', AppComponent.latestRequest);
         request.send();
       }
-    });
+    });*/
+
+    this.colorPicker.on('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
   }
-  
+
+  // Remove the eventlistener on destruction.
+  OnDestroy(): void{
+    this.colorPicker.off('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
+  }
+
+  onColorChange(color) {
+    let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
+    let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
+    let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
+    AppComponent.latestRequest = `?1=${colorToHex(hue, sat, val)}`;
+    
+    // Sends the request to the ESP32 over URL
+    if(AppComponent.powerStatus){
+      let request = new XMLHttpRequest();
+      
+      request.open('POST', AppComponent.latestRequest);
+      request.send();
+    }
+  }
+
   // Adds the selected color from the colorwheel to the colorArray.
   addColor() {
     this.colors.push(new iro.Color(this.colorPicker.color));

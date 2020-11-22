@@ -4,15 +4,13 @@
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 2px;
     height: 60%;
-
     padding: 20px;
 
     button{
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-
-        
+        border: black 1px solid;
     }
 
     /*div{
