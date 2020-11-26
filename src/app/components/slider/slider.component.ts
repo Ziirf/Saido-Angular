@@ -16,11 +16,11 @@ export class SliderComponent {
   @Input("value")
   public selectedValue: number;
 
-  @Output() valueChangedEvent = new EventEmitter<number>();
+  @Output() 
+  valueChangedEvent = new EventEmitter<number>();
   
   valueChanged(input: number) {
     this.selectedValue = input;
     this.valueChangedEvent.emit(this.selectedValue);
   }
-
 }

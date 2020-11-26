@@ -1,33 +1,39 @@
+@import '../../scss/elements.scss';
+@import '../../scss/variables.scss';
+
 .pattern-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-gap: 2px;
-    height: 60%;
+    //grid-template-rows: repeat(4, 1fr);
+    grid-gap: 5px;
     padding: 20px;
 
-    button{
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        border: black 1px solid;
+    .button{
+        height: 50px;
     }
+    
+    #extendGridBtn{
+        border: none;
+        background: none;
+        grid-column: 1/ 4;
+        font-size: 1.5em;
+    }
+}
 
-    /*div{
-        display: grid;
+p{
+    margin: 5px 0px;
+    padding: 0px 20px;
+}
 
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-
-        background: #CCC;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }*/
+.app-slider{
+    display: block;
+    margin: auto;
+    padding: 0px 20px;
 }
 
 :host{
     height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto
 }

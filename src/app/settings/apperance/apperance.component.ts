@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-apperance',
   templateUrl: './apperance.component.html',
   styleUrls: ['./apperance.component.scss']
 })
-export class ApperanceComponent implements OnInit {
+export class ApperanceComponent {
 
-  constructor() { }
+  @Output() 
+  closeWindowEvent = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  brightBtn(){
+    this.closeWindowEvent.emit(null);
+  }
+
+  darkBtn(){
+    this.closeWindowEvent.emit(null);
+  }
+
+  partyBtn(){
+    this.closeWindowEvent.emit(null);
+  }
+
+  terminalBtn(){
+    this.closeWindowEvent.emit(null);
   }
 
 }

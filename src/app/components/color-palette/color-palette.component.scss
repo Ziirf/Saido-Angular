@@ -1,0 +1,16 @@
+#colorPalette{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3px;
+
+    .sample{
+      display: block;
+      height: 35px;
+      border-radius: 5px;
+      border: 1px solid #000;
+
+      &:active { outline: none; border: none; }
+
+      &:focus { outline:0; }
+    }
+  }

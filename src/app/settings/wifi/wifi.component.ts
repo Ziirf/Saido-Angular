@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-wifi',
   templateUrl: './wifi.component.html',
   styleUrls: ['./wifi.component.scss']
 })
-export class WifiComponent implements OnInit {
+export class WifiComponent{
 
-  constructor() { }
+  @Output() 
+  closeWindowEvent = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  okBtn(){
+    this.closeWindowEvent.emit(null);
   }
 
+  cancelBtn(){
+    this.closeWindowEvent.emit(null);
+  }
 }

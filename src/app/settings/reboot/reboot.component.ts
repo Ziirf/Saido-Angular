@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-reboot',
@@ -7,6 +7,14 @@ import { Component } from '@angular/core';
 })
 export class RebootComponent {
 
+  @Output() 
+  closeWindowEvent = new EventEmitter<string>();
 
+  yesBtn(){
+    this.closeWindowEvent.emit(null);
+  }
 
+  noBtn(){
+    this.closeWindowEvent.emit(null);
+  }
 }

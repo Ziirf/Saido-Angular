@@ -1,10 +1,15 @@
 <div class="pattern-container">
-    <ng-template ngFor let-pattern [ngForOf]="patternsArray">
-        <button (click)="clickPattern(pattern)">{{ pattern.name }}</button>
+    <ng-template ngFor let-pattern [ngForOf]="currentArray">
+        <button class="button" (click)="clickPattern(pattern)"
+        [style.border-color]="checkPattern(pattern) ? 'orange' : 'black'">{{ pattern.name }}</button>
+    </ng-template>
+    <ng-template [ngIf]="currentArray != patternsArray">
+        <button id="extendGridBtn" (click)="clickExtendGrid()">▼</button>
     </ng-template>
 </div>
 <div>
-    <ng-template [ngIf]="selectedPattern">
-        <p>{{selectedPattern.id}}</p>
-    </ng-template>
+</div>
+<div>
+    <p>Brightness</p>
+    <app-slider min=0 max=100 value=0 class="app-slider"></app-slider>
 </div>

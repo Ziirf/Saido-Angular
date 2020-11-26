@@ -5,11 +5,11 @@
     <button (click)="switchChange('apperance')">Apperance</button>
     <button (click)="switchChange('palette')">Edit Palette</button>
     <div id="pop-up-container" [(ngSwitch)]="popUp" (clickOutside)="closePopUp($event)">
-        <app-reboot *ngSwitchCase="'reboot'"></app-reboot>
-        <app-wifi *ngSwitchCase="'wifi'"></app-wifi>
-        <app-led-count *ngSwitchCase="'led'"></app-led-count>
-        <app-apperance *ngSwitchCase="'apperance'"></app-apperance>
-        <app-edit-palette *ngSwitchCase="'palette'"></app-edit-palette>
+        <app-reboot *ngSwitchCase="'reboot'" (closeWindowEvent)="popUp=null"></app-reboot>
+        <app-wifi *ngSwitchCase="'wifi'" (closeWindowEvent)="popUp=null"></app-wifi>
+        <app-led-count *ngSwitchCase="'led'" (closeWindowEvent)="popUp=null"></app-led-count>
+        <app-apperance *ngSwitchCase="'apperance'" (closeWindowEvent)="popUp=null"></app-apperance>
+        <app-edit-palette *ngSwitchCase="'palette'" (closeWindowEvent)="popUp=null"></app-edit-palette>
         <div *ngSwitchDefault></div>
     </div>
 </div>

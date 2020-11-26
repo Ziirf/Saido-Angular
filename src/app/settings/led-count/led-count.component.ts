@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-led-count',
   templateUrl: './led-count.component.html',
   styleUrls: ['./led-count.component.scss']
 })
-export class LedCountComponent implements OnInit {
+export class LedCountComponent{
 
-  constructor() { }
+  @Output() 
+  closeWindowEvent = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  okBtn(){
+    this.closeWindowEvent.emit(null);
   }
 
+  cancelBtn(){
+    this.closeWindowEvent.emit(null);
+  }
 }
