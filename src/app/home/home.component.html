@@ -1,6 +1,6 @@
 <div id="colorWrap">
   <div id="colorWheel"></div>
-  <app-slider [min]=0 [max]=100 [(value)]="colorPicker.color.value" (valueChangedEvent)="colorChange($event)"></app-slider>
+  <app-slider [color]="colorPicker.color" [min]=0 [max]=100 [(value)]="colorPicker.color.value" (valueChangedEvent)="colorChange($event)"></app-slider>
   <app-color-palette [colors]="colors" [colorWheel]="colorPicker" [allowAddColor]="true"></app-color-palette>
   
   <!--<div id="colorPalette">

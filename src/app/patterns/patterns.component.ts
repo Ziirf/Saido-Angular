@@ -9,7 +9,6 @@ import '../models/patterns.model';
 export class PatternsComponent implements OnInit {
 
   patternsArray : Array<PatternModel>
-  currentArray : Array<PatternModel>
   selectedPattern : PatternModel;
   collapsedGrid : boolean = true;
 
@@ -29,35 +28,15 @@ export class PatternsComponent implements OnInit {
       { id: 21,  name: "Disco"      },
       { id: 22,  name: "Siren"      }
     ];
-    this.currentArray = this.patternsArray;
   }
 
   // Click event used in the HTML to send a POST to the ESP32.
   // Changes the current selected pattern.
-  private clickPattern(pattern: PatternModel){
+  public clickPattern(pattern: PatternModel){
     this.selectedPattern = pattern;
-    this.changeGridLayout(pattern);
 
     var request = new XMLHttpRequest();
     request.open('POST',`?${ pattern.id }`);
     request.send();
-  }
-
-  private checkPattern(pattern: PatternModel){
-    if(this.selectedPattern == null)
-      return false;
-    else if(this.selectedPattern.id == pattern.id)
-      return true;
-      
-    return false;
-  }
-
-  private clickExtendGrid(){
-    this.currentArray = this.patternsArray;
-  }
-
-  private changeGridLayout(pattern: PatternModel){
-    var row = Math.floor(this.patternsArray.findIndex(x => x.id == pattern.id)/3);
-    this.currentArray = this.patternsArray.slice(row*3, row*3+3);
   }
 }

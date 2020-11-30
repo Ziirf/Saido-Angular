@@ -1,23 +1,11 @@
 @import '../../scss/elements.scss';
 @import '../../scss/variables.scss';
 
-.pattern-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    //grid-template-rows: repeat(4, 1fr);
-    grid-gap: 5px;
-    padding: 20px;
+:host{
+    height: 100%;
 
-    .button{
-        height: 50px;
-    }
-    
-    #extendGridBtn{
-        border: none;
-        background: none;
-        grid-column: 1/ 4;
-        font-size: 1.5em;
-    }
+    display: grid;
+    grid-template-rows: 1fr auto
 }
 
 p{
@@ -31,9 +19,29 @@ p{
     padding: 0px 20px;
 }
 
-:host{
-    height: 100%;
-
+.pattern-container{
     display: grid;
-    grid-template-rows: auto 1fr auto
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 5px;
+    
+    padding: 10px;
+    
+    #extendGridBtn{
+        border: none;
+        background: none;
+        grid-column: 1/ 4;
+        font-size: 1.5em;
+    }
+
+    #properties{
+        grid-column: 1 / 4;
+        grid-row: 2 / 5;
+
+        app-slider ::ng-deep .slider{
+            margin-top: 10px; 
+        }
+    }
 }
+

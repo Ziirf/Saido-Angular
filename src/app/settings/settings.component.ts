@@ -16,7 +16,7 @@ export class SettingsComponent {
     let target = e.target || e.srcElement || e.currentTarget;
     let popUpWindow = document.getElementById("pop-up-container");
     
-    if (target.offsetParent != popUpWindow && this.popUp != null && e.target.tagName != "BUTTON") {
+    if (target.offsetParent != popUpWindow && this.popUp != null && target.tagName != "BUTTON") {
       this.popUp = null;
     }
   }
