@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import iro from '@jaames/iro';
-import { red } from 'color-name';
 
 @Component({
   selector: 'app-slider',
@@ -9,20 +8,21 @@ import { red } from 'color-name';
 })
 export class SliderComponent {
 
+
   @Input("min")
-  public minValue : number;
+  public minValue : number = 0;
 
   @Input("max")
-  public maxValue : number;
+  public maxValue : number = 100;
 
   @Input("value")
-  public selectedValue: number;
+  public selectedValue: number = 50;
 
   @Input("color")
   public color: iro.Color;
 
   @Output() 
-  valueChangedEvent = new EventEmitter<number>();
+  valueChangedEvent : EventEmitter<number> = new EventEmitter<number>();
   
   valueChanged(input: number) {
     this.selectedValue = input;

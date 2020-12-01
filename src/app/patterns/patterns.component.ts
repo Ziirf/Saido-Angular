@@ -10,23 +10,23 @@ export class PatternsComponent implements OnInit {
 
   patternsArray : Array<PatternModel>
   selectedPattern : PatternModel;
-  collapsedGrid : boolean = true;
+  editProperties : boolean = false;
 
   ngOnInit(): void {
     // Makes an array of the patterns.
     this.patternsArray = [
-      { id: 11,  name: "Rainbow"    },
-      { id: 12,  name: "Cyclone"    },
-      { id: 13,  name: "Jungle"     },
-      { id: 14,  name: "Fireworks"  },
-      { id: 15,  name: "Balls"      },
-      { id: 16,  name: "Strobe"     },
-      { id: 17,  name: "Meteor"     },
-      { id: 18,  name: "Half-Light" },
-      { id: 19,  name: "Blend"      },
-      { id: 20,  name: "Fire"       },
-      { id: 21,  name: "Disco"      },
-      { id: 22,  name: "Siren"      }
+      { id: 11,  name: "Rainbow",     properties: ["slider"]  },
+      { id: 12,  name: "Cyclone",     properties: ["slider", "slider", "slider"]  },
+      { id: 13,  name: "Jungle",      properties: ["slider", "slider"]  },
+      { id: 14,  name: "Fireworks",   properties: ["slider", "slider"]  },
+      { id: 15,  name: "Balls",       properties: ["slider", "slider"]  },
+      { id: 16,  name: "Strobe",      properties: ["slider", "slider"]  },
+      { id: 17,  name: "Meteor",      properties: ["slider", "slider"]  },
+      { id: 18,  name: "Half-Light",  properties: ["slider", "slider"]  },
+      { id: 19,  name: "Blend",       properties: ["slider", "slider"]  },
+      { id: 20,  name: "Fire",        properties: ["slider", "slider"]  },
+      { id: 21,  name: "Disco",       properties: ["slider", "slider"]  },
+      { id: 22,  name: "Siren",       properties: ["slider", "slider"]  }
     ];
   }
 

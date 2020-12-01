@@ -11,8 +11,10 @@ import { WifiComponent } from './settings/wifi/wifi.component';
 import { LedCountComponent } from './settings/led-count/led-count.component';
 import { ApperanceComponent } from './settings/apperance/apperance.component';
 import { EditPaletteComponent } from './settings/edit-palette/edit-palette.component';
+
 import { SliderComponent } from './components/slider/slider.component';
 import { ColorPaletteComponent } from './components/color-palette/color-palette.component';
+import { PropertiesComponent } from './components/properties/properties.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ColorPaletteComponent } from './components/color-palette/color-palette.
     ApperanceComponent,
     EditPaletteComponent,
     SliderComponent,
-    ColorPaletteComponent
+    ColorPaletteComponent,
+    PropertiesComponent
   ],
   imports: [
     BrowserModule,
