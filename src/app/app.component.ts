@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { HttpService } from './services/http-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,23 +9,12 @@ import { Component, HostListener } from '@angular/core';
 export class AppComponent{
   title = 'Saido';
 
-  public static powerStatus : boolean = false;
-  public static latestRequest : string;
   public burgerMenuToggle: boolean = false;
+  
+  constructor(private httpService: HttpService) { }
 
   togglePower(){
-    if (AppComponent.powerStatus == false){
-      var request = new XMLHttpRequest();
-      request.open('POST', AppComponent.latestRequest || "?1=0000FF" );
-      request.send();
-      AppComponent.powerStatus = true;
-    }
-    else{
-      var request = new XMLHttpRequest();
-      request.open('POST',`?0`);
-      request.send();
-      AppComponent.powerStatus = false;
-    }
+    this.httpService.togglePower();
   }
 
   @HostListener('document:click', ['$event'])

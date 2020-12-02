@@ -8,7 +8,6 @@ import iro from '@jaames/iro';
 })
 export class SliderComponent {
 
-
   @Input("min")
   public minValue : number = 0;
 
@@ -16,16 +15,17 @@ export class SliderComponent {
   public maxValue : number = 100;
 
   @Input("value")
-  public selectedValue: number = 50;
+  public selectedValue: number = this.maxValue/2;
 
   @Input("color")
   public color: iro.Color;
 
-  @Output() 
+  @Output()
   valueChangedEvent : EventEmitter<number> = new EventEmitter<number>();
   
-  valueChanged(input: number) {
-    this.selectedValue = input;
+  // input is a string (unknown reason)
+  valueChanged(input: string) {
+    this.selectedValue = parseInt(input);
     this.valueChangedEvent.emit(this.selectedValue);
   }
 

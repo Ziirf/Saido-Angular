@@ -1,18 +1,24 @@
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
 import { AppComponent } from '../app.component';
 import iro from '@jaames/iro';
+import { HttpService } from '../services/http-service.service';
+import { HexService } from '../services/hex.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   // Variables of this class.
   colorPicker : iro.ColorPicker;
   colors: Array<iro.Color>;
 
-  constructor(private ngZone: NgZone) { }
+  constructor(
+    private ngZone: NgZone, 
+    private httpService: HttpService,
+    private hexConvert: HexService
+    ) { }
   
   ngOnInit(): void {
     // Instanciates the Colorwheel.
@@ -37,7 +43,7 @@ export class HomeComponent implements OnInit {
   }
 
   // Remove the eventlistener on destruction.
-  OnDestroy(): void{
+  ngOnDestroy(): void{
     this.colorPicker.off('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
   }
 
@@ -46,15 +52,7 @@ export class HomeComponent implements OnInit {
     let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
     let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
     let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
-    AppComponent.latestRequest = `?1=${this.colorToHex(hue, sat, val)}`;
-    
-    // Sends the request to the ESP32 over URL
-    if(AppComponent.powerStatus){
-      let request = new XMLHttpRequest();
-      
-      request.open('POST', AppComponent.latestRequest);
-      request.send();
-    }
+    this.httpService.postRequest(1, this.hexConvert.intToHex(hue, sat, val));
   }
 
   colorChange(value: number){
@@ -62,13 +60,13 @@ export class HomeComponent implements OnInit {
   }
 
   // Converts the 3 hue values to hexdecimal.
-  colorToHex(h: number, s: number, v: number){
+  /*colorToHex(h: number, s: number, v: number){
     if(h > 255 || s > 255 || v > 255){
       return null;
     }
   
     return new String(h.toString(16).padStart(2, '0') + s.toString(16).padStart(2, '0') + v.toString(16).padStart(2, '0')).toUpperCase();
-  }
+  }*/
 }
 
 /*  Notes:
@@ -81,15 +79,3 @@ export class HomeComponent implements OnInit {
 
 
 // TODO: Optimize timer to limit post requests.
-
-
-
-  // Adds the selected color from the colorwheel to the colorArray.
-  /*addColor() {
-    this.colors.push(new iro.Color(this.colorPicker.color));
-  }*/
-
-  // Move the Colorwheel cursor to the saved color.
-  /*selectedColor(color: iro.Color){
-    this.colorPicker.color.rgb = {r: color.rgb.r, g: color.rgb.g, b:color.rgb.b};
-  }*/

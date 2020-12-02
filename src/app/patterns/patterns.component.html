@@ -1,8 +1,10 @@
 <div *ngIf="editProperties else patterns">
 
-    <app-properties [pattern]="selectedPattern" (escapeEvent)="editProperties = $event">
-        
-    </app-properties>
+    <div class="container">
+
+        <app-properties [pattern]="selectedPattern" (escapeEvent)="editProperties = $event"></app-properties>
+
+    </div>
 
 </div>
 
@@ -14,7 +16,7 @@
 
 <ng-template #patterns>
 
-    <div class="pattern-container">
+    <div class="pattern container">
 
             <ng-template ngFor let-pattern [ngForOf]="patternsArray">
     

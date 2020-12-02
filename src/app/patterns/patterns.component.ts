@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import '../models/patterns.model';
+import '../../models/patterns.model';
 
 @Component({
   selector: 'app-patterns',
@@ -8,25 +8,25 @@ import '../models/patterns.model';
 })
 export class PatternsComponent implements OnInit {
 
-  patternsArray : Array<PatternModel>
+  patternsArray : PatternModel[];
   selectedPattern : PatternModel;
   editProperties : boolean = false;
 
   ngOnInit(): void {
     // Makes an array of the patterns.
     this.patternsArray = [
-      { id: 11,  name: "Rainbow",     properties: ["slider"]  },
-      { id: 12,  name: "Cyclone",     properties: ["slider", "slider", "slider"]  },
-      { id: 13,  name: "Jungle",      properties: ["slider", "slider"]  },
-      { id: 14,  name: "Fireworks",   properties: ["slider", "slider"]  },
-      { id: 15,  name: "Balls",       properties: ["slider", "slider"]  },
-      { id: 16,  name: "Strobe",      properties: ["slider", "slider"]  },
-      { id: 17,  name: "Meteor",      properties: ["slider", "slider"]  },
-      { id: 18,  name: "Half-Light",  properties: ["slider", "slider"]  },
-      { id: 19,  name: "Blend",       properties: ["slider", "slider"]  },
-      { id: 20,  name: "Fire",        properties: ["slider", "slider"]  },
-      { id: 21,  name: "Disco",       properties: ["slider", "slider"]  },
-      { id: 22,  name: "Siren",       properties: ["slider", "slider"]  }
+      { id: 11,  name: "Rainbow"     ,  parameters: [1, 25]},
+      { id: 12,  name: "Cyclone"     ,  parameters: [90]},
+      { id: 13,  name: "Jungle",     },
+      { id: 14,  name: "Fireworks",  },
+      { id: 15,  name: "Balls",      },
+      { id: 16,  name: "Strobe",     },
+      { id: 17,  name: "Meteor",     },
+      { id: 18,  name: "Half-Light", },
+      { id: 19,  name: "Blend",      },
+      { id: 20,  name: "Fire",       },
+      { id: 21,  name: "Disco",      },
+      { id: 22,  name: "Siren",      }
     ];
   }
 
@@ -35,8 +35,8 @@ export class PatternsComponent implements OnInit {
   public clickPattern(pattern: PatternModel){
     this.selectedPattern = pattern;
 
-    var request = new XMLHttpRequest();
-    request.open('POST',`?${ pattern.id }`);
-    request.send();
+    //var request = new XMLHttpRequest();
+    //request.open('POST',`?${ pattern.id }`);
+    //request.send();
   }
 }

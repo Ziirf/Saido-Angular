@@ -1,0 +1,77 @@
+<div [ngSwitch]="pattern.id" id="property-container">
+
+    <!-- Rainbow pattern -->
+    <div *ngSwitchCase="11">
+        <app-slider [min]="0" [max]="100"
+        [value]="pattern.parameters[0]"
+        (valueChangedEvent)="pattern.parameters[0] = $event"></app-slider>
+
+        <app-slider [min]="0" [max]="100"
+        [value]="pattern.parameters[1]"
+        (valueChangedEvent)="pattern.parameters[1] = $event"></app-slider>
+    </div>
+
+    <!-- Cyclone pattern -->
+    <div *ngSwitchCase="12"> 
+        <app-slider [min]="0" 
+        [(value)]="pattern.parameters == null ? '0' : pattern.parameters[0]"
+        (valueChangedEvent)="pattern.parameters[0] = $event">
+        </app-slider>
+    </div>
+
+    <!-- Jungle pattern -->
+    <div *ngSwitchCase="13"> 
+        <app-slider [min]="0" 
+        [(value)]="pattern.parameters == null ? '0' : pattern.parameters[0]"
+        (valueChangedEvent)="pattern.parameters[0] = $event">
+        </app-slider>
+    </div>
+
+    <!-- Fireworks pattern -->
+    <div *ngSwitchCase="14"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Balls pattern -->
+    <div *ngSwitchCase="15"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Strobe pattern -->
+    <div *ngSwitchCase="16"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+    
+    <!-- Meteor pattern -->
+    <div *ngSwitchCase="17"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Half-Light pattern -->
+    <div *ngSwitchCase="18"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Blend pattern -->
+    <div *ngSwitchCase="19"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Fire pattern -->
+    <div *ngSwitchCase="20"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Disco pattern -->
+    <div *ngSwitchCase="21"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+    <!-- Siren pattern -->
+    <div *ngSwitchCase="22"> 
+        <app-slider [min]="0" [value]="pattern.parameters[0]"></app-slider>
+    </div>
+
+</div>
+
+<button (click)="escape()">Return</button>

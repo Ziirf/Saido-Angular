@@ -14,7 +14,10 @@ import { EditPaletteComponent } from './settings/edit-palette/edit-palette.compo
 
 import { SliderComponent } from './components/slider/slider.component';
 import { ColorPaletteComponent } from './components/color-palette/color-palette.component';
-import { PropertiesComponent } from './components/properties/properties.component'
+import { PropertiesComponent } from './patterns/properties/properties.component';
+
+import { HttpService } from './services/http-service.service';
+import { HexService } from './services/hex.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { PropertiesComponent } from './components/properties/properties.componen
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    HttpService, 
+    HexService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
