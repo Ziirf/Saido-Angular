@@ -9,7 +9,7 @@ import iro from '@jaames/iro';
 export class ColorPaletteComponent{
   
   @Input()
-  public colors: Array<iro.Color>;
+  public colors: iro.Color[];
 
   @Input()
   public colorWheel: iro.ColorPicker;

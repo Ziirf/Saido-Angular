@@ -1,6 +1,6 @@
 @import '../../../scss/elements.scss';
 
-.palette-container{
+.container{
     background-color: white;
     border: 5px black solid;
     
@@ -8,6 +8,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
     padding-top: 10px;
+}
+
+.palette{
+    width: 90%;
+    justify-self: center;
 }
 
 p{

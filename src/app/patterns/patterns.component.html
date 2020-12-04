@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <app-properties [pattern]="selectedPattern" (escapeEvent)="editProperties = $event"></app-properties>
+        <app-properties [brightness]="brightness.value" [pattern]="selectedPattern" (returnEvent)="editProperties = $event"></app-properties>
 
     </div>
 
@@ -10,7 +10,7 @@
 
 <div>
     <p>Brightness</p>
-    <app-slider class="app-slider" min=0 max=100 value=0></app-slider>
+    <app-slider class="app-slider" min=0 max=100 value=0 (valueChangedEvent)="brightness.value = $event" #brightness></app-slider>
 </div>
 
 

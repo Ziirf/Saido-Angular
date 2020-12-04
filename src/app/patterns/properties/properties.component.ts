@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import '../../../models/patterns.model';
 import { HttpService } from '../../services/http-service.service';
-import { stringify } from 'querystring';
 import { HexService } from '../../services/hex.service';
+import '../../../models/patterns.model';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-properties',
@@ -11,28 +11,29 @@ import { HexService } from '../../services/hex.service';
 })
 export class PropertiesComponent {
 
-  constructor(
-    private httpService: HttpService,
-    private hexConvert: HexService
-    ) { }
-
   @Input("pattern")
   pattern : PatternModel;
 
-  @Output()
-  escapeEvent : EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input("brightness")
+  brightness : number;
 
-  //TODO:
+  @Output()
+  returnEvent : EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  constructor(
+    private httpService: HttpService,
+    private hexConvert: HexService,
+    private data: DataService
+  ) { }
+
+  // Listens to changes of the properties in this component.
   @HostListener('change')
   ngOnChanges() {
     this.httpService.postRequest(this.pattern.id, this.hexConvert.intArrayToHex(this.pattern.parameters));
   }
 
-  colorChange(value: string){
-    return parseInt(value);
-  }
-
-  escape(){
-    this.escapeEvent.emit(false);
+  // Exit this component.
+  returnBtn(){
+    this.returnEvent.emit(false);
   }
 }

@@ -1,6 +1,11 @@
-<div id="colorPalette">
+<div id="colorPalette" *ngIf="colors">
+
     <ng-template ngFor let-color [ngForOf]="colors">
+
         <button style.background-color="{{ color.rgbString }}" (click)="selectedColor(color)" class="sample"></button>
+
     </ng-template>
+
     <button *ngIf="colors.length < 15 && allowAddColor == true && colorWheel != null" (click)="addColor()" class="sample">+</button>
+    
 </div>

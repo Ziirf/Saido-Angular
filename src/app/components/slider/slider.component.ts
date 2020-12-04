@@ -23,7 +23,7 @@ export class SliderComponent {
   @Output()
   valueChangedEvent : EventEmitter<number> = new EventEmitter<number>();
   
-  // input is a string (unknown reason)
+  // input have to be converted from string to a number in order to work.
   valueChanged(input: string) {
     this.selectedValue = parseInt(input);
     this.valueChangedEvent.emit(this.selectedValue);

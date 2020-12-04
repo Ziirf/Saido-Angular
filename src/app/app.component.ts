@@ -13,10 +13,14 @@ export class AppComponent{
   
   constructor(private httpService: HttpService) { }
 
+  // Toggles the powerswitch
   togglePower(){
     this.httpService.togglePower();
   }
 
+  // Listens to a click event, if the click is on the burgermenu icon -
+  // then it will open the menu, if the click is outside the menu container -
+  // then it will close the container.
   @HostListener('document:click', ['$event'])
   closePopUp(e: any){
     let target = e.target || e.srcElement || e.currentTarget;

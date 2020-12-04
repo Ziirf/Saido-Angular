@@ -1,12 +1,19 @@
 <div id="colorWrap">
-  <div id="colorWheel"></div>
-  <app-slider [color]="colorPicker.color" [min]=0 [max]=100 [(value)]="colorPicker.color.value" (valueChangedEvent)="colorChange($event)"></app-slider>
-  <app-color-palette [colors]="colors" [colorWheel]="colorPicker" [allowAddColor]="true"></app-color-palette>
   
-  <!--<div id="colorPalette">
-    <ng-template ngFor let-color [ngForOf]="colors">
-        <button style.background-color="{{ color.rgbString }}" (click)="selectedColor(color)" class="sample"></button>
-    </ng-template>
-    <button *ngIf="colors.length < 15" (click)="addColor()" class="sample">+</button>
-  </div>-->
+  <div id="colorWheel"></div>
+
+  <app-slider 
+    [color]="colorPicker.color" 
+    [min]=0 
+    [max]=100 
+    [(value)]="colorPicker.color.value" 
+    (valueChangedEvent)="colorChange($event)">
+  </app-slider>
+
+  <app-color-palette 
+    [colors]="data.colorPalette" 
+    [colorWheel]="colorPicker" 
+    [allowAddColor]="true">
+  </app-color-palette>
+
 </div>

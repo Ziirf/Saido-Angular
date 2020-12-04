@@ -26,11 +26,10 @@ export class HexService {
   intArrayToHex(input: number[]) : string{
     let output = "";
 
-    console.log(input);
     for (let i = 0; i < input.length; i++) {
       if(input[i] <= 255){
         output += input[i].toString(16).padStart(2, '0').toUpperCase();
-        console.log(input);
+        //console.log(input);
       }
       else{
         console.log("Error: Covert to hex Error");

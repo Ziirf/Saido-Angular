@@ -17,6 +17,10 @@
         [(value)]="pattern.parameters == null ? '0' : pattern.parameters[0]"
         (valueChangedEvent)="pattern.parameters[0] = $event">
         </app-slider>
+        
+        <app-color-palette [colors]="data.colorPalette">
+
+        </app-color-palette>
     </div>
 
     <!-- Jungle pattern -->
@@ -74,4 +78,4 @@
 
 </div>
 
-<button (click)="escape()">Return</button>
+<button (click)="returnBtn()">Return</button>

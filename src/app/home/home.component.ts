@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
-import { AppComponent } from '../app.component';
 import iro from '@jaames/iro';
 import { HttpService } from '../services/http-service.service';
 import { HexService } from '../services/hex.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -12,12 +12,13 @@ import { HexService } from '../services/hex.service';
 export class HomeComponent implements OnInit, OnDestroy {
   // Variables of this class.
   colorPicker : iro.ColorPicker;
-  colors: Array<iro.Color>;
+  //colors: Array<iro.Color>;
 
   constructor(
     private ngZone: NgZone, 
     private httpService: HttpService,
-    private hexConvert: HexService
+    private hexConvert: HexService,
+    private data: DataService
     ) { }
   
   ngOnInit(): void {
@@ -34,9 +35,16 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       ]
     });
+
+    /*
+    this.data.colorPalette = [
+      new iro.Color({r: 100, g: 100, b: 100}),
+      new iro.Color({r: 100, g: 100, b: 100})
+    ];*/
     
     // Instanciates the color array.
-    this.colors = new Array<iro.Color>();
+    //this.colors = new Array<iro.Color>();
+    //this.data.colorPalette = new Array<iro.Color>();
 
     // Add an event listener.
     this.colorPicker.on('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
@@ -58,15 +66,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   colorChange(value: number){
     this.colorPicker.color.value = value;
   }
-
-  // Converts the 3 hue values to hexdecimal.
-  /*colorToHex(h: number, s: number, v: number){
-    if(h > 255 || s > 255 || v > 255){
-      return null;
-    }
-  
-    return new String(h.toString(16).padStart(2, '0') + s.toString(16).padStart(2, '0') + v.toString(16).padStart(2, '0')).toUpperCase();
-  }*/
 }
 
 /*  Notes:
