@@ -10,11 +10,11 @@ export class WifiComponent{
   @Output() 
   closeWindowEvent = new EventEmitter<string>();
 
-  okBtn(){
+  okBtn() : void {
     this.closeWindowEvent.emit(null);
   }
 
-  cancelBtn(){
+  cancelBtn() : void {
     this.closeWindowEvent.emit(null);
   }
 }

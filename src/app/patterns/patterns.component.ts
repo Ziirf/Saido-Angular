@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 import '../../models/patterns.model';
+import { HttpService } from '../services/http-service.service';
 
 @Component({
   selector: 'app-patterns',
@@ -12,29 +14,22 @@ export class PatternsComponent implements OnInit {
   selectedPattern : PatternModel;
   editProperties : boolean = false;
 
+  constructor(
+    private data: DataService,
+    private httpService: HttpService
+  ) { }
+
   ngOnInit(): void {
     // Makes an array of the patterns.
-    this.patternsArray = [
-      { id: 11,  name: "Rainbow"     ,  parameters: [1, 25]},
-      { id: 12,  name: "Cyclone"     ,  parameters: [90]},
-      { id: 13,  name: "Jungle",     },
-      { id: 14,  name: "Fireworks",  },
-      { id: 15,  name: "Balls",      },
-      { id: 16,  name: "Strobe",     },
-      { id: 17,  name: "Meteor",     },
-      { id: 18,  name: "Half-Light", },
-      { id: 19,  name: "Blend",      },
-      { id: 20,  name: "Fire",       },
-      { id: 21,  name: "Disco",      },
-      { id: 22,  name: "Siren",      }
-    ];
+    this.patternsArray = this.data.patternsArray;
   }
 
   // Click event used in the HTML to send a POST to the ESP32.
   // Changes the current selected pattern.
-  public clickPattern(pattern: PatternModel){
+  public clickPattern(pattern: PatternModel) : void{
     this.selectedPattern = pattern;
 
+    this.httpService.postRequest(pattern.id, 'asd');
     //var request = new XMLHttpRequest();
     //request.open('POST',`?${ pattern.id }`);
     //request.send();

@@ -12,7 +12,7 @@ export class SettingsComponent {
   // Hostlistener that checks if there is a click outside of the
   // the scope of the pop up div.
   @HostListener('document:click', ['$event'])
-  closePopUp(e: any){
+  closePopUp(e: any) : void {
     let target = e.target || e.srcElement || e.currentTarget;
     let popUpWindow = document.getElementById("pop-up-container");
     
@@ -21,7 +21,7 @@ export class SettingsComponent {
     }
   }
 
-  switchChange(input: string) {
+  switchChange(input: string) : void {
     this.popUp = input;
   }
 }

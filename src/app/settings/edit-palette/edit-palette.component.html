@@ -5,13 +5,25 @@
     <app-color-palette
         (onSelectedColor)="selectedColorChange($event)"
         [colors]="data.colorPalette"
-        class="palette">
+        class="palette"
+        [selectedColorIndex]="selectedColorIndex">
     </app-color-palette>
 
     <div class="button-container">
         <button (click)="okBtn()">OK</button>
-        <button [disabled]="!selectedColor" (click)="changePosition(-1)">◀</button>
-        <button [disabled]="!selectedColor" (click)="changePosition(1)">▶</button>
-        <button [disabled]="!selectedColor">X</button>
+        <button 
+            [disabled]="!data.colorPalette[selectedColorIndex] || selectedColorIndex <= 0" 
+            (click)="changePosition(-1)">◀
+        </button>
+
+        <button 
+            [disabled]="!data.colorPalette[selectedColorIndex] || selectedColorIndex >= (data.colorPalette.length - 1)" 
+            (click)="changePosition(1)">▶
+        </button>
+
+        <button 
+            [disabled]="!data.colorPalette[selectedColorIndex]" 
+            (click)="deleteBtn()">X
+        </button>
     </div>
 </div>

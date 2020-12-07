@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import iro from '@jaames/iro';
 
 @Component({
   selector: 'app-edit-palette',
@@ -8,28 +9,35 @@ import { DataService } from '../../services/data.service';
 })
 export class EditPaletteComponent {
 
+  selectedColorIndex: number;
+
   @Output() 
-  closeWindowEvent = new EventEmitter<string>();
-  selectedColor;
+  closeWindowEvent = new EventEmitter<null>();
 
   constructor(
-    private data: DataService
+    public data: DataService
   ) { }
 
-  //TODO
-  selectedColorChange(event: Event){
-    this.selectedColor = event;
-    console.log(event);
+  // Changes the selected color and selected color index when clicked on a color from the palette.
+  selectedColorChange(event: any) : void {
+    this.selectedColorIndex = event.index;
   }
 
-  //TODO
-  changePosition(pos: number) {
+  // Changes the position of colors to a position, the parameter is plus.
+  changePosition(pos: number) : void {
     let list = this.data.colorPalette;
-    [list[0], list[3]] = [list[3], list[0]];
+    [list[this.selectedColorIndex], list[this.selectedColorIndex + pos]] = [list[this.selectedColorIndex + pos], list[this.selectedColorIndex]];
+    this.selectedColorIndex += pos;
   }
 
-  okBtn() {
-    this.closeWindowEvent.emit(null);
+  // Closes the window.
+  okBtn() : void {
+    this.closeWindowEvent.emit();
   }
 
+  // Remove the selected element from the list.
+  deleteBtn() : void {
+    this.data.colorPalette.splice(this.selectedColorIndex, 1);
+    this.selectedColorIndex = null;
+  }
 }

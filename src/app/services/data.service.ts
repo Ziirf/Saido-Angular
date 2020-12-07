@@ -1,10 +1,14 @@
 import { Injectable, OnInit } from '@angular/core';
 import iro from '@jaames/iro';
+import '../../models/patterns.model'
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService implements OnInit {
+
+  colorPalette: iro.Color[];
+  patternsArray: PatternModel[];
 
   ngOnInit(): void {
     
@@ -12,23 +16,22 @@ export class DataService implements OnInit {
 
   constructor() { 
     this.colorPalette = [
-      new iro.Color({r: 255, g: 100, b: 100}),
-      new iro.Color({r: 100, g: 255, b: 100}),
-      new iro.Color({r: 100, g: 100, b: 255}),
-      new iro.Color({r: 255, g: 255, b: 100}),
-      new iro.Color({r: 255, g: 100, b: 255}),
-      new iro.Color({r: 100, g: 255, b: 255}),
-      new iro.Color({r: 150, g:  30, b: 220}),
-      new iro.Color({r:  20, g: 150, b:  80}),
-      new iro.Color({r: 150, g: 180, b:   0}),
-      new iro.Color({r: 150, g: 255, b:   0}),
-      new iro.Color({r:   0, g:   0, b:   0}),
-      new iro.Color({r: 255, g: 255, b: 255}),
-      new iro.Color({r:   0, g: 100, b: 100}),
-      new iro.Color({r: 150, g:  50, b:  20}),
-      new iro.Color({r: 150, g: 100, b: 100})
+    ];
+
+    this.patternsArray = [
+      { id: 11,  name: "Rainbow"     ,  parameters: [1, 25]   },
+      { id: 12,  name: "Cyclone"     ,  parameters: [90]      },
+      { id: 13,  name: "Jungle"      ,  parameters: [90]      },
+      { id: 14,  name: "Fireworks"   ,  parameters: [90]      },
+      { id: 15,  name: "Balls"       ,  parameters: [90]      },
+      { id: 16,  name: "Strobe"      ,  parameters: [90]      },
+      { id: 17,  name: "Meteor"      ,  parameters: [90]      },
+      { id: 18,  name: "Half-Light"  ,  parameters: [90]      },
+      { id: 19,  name: "Blend"       ,  parameters: [90]      },
+      { id: 20,  name: "Fire"        ,  parameters: [90]      },
+      { id: 21,  name: "Disco"       ,  parameters: [90]      },
+      { id: 22,  name: "Siren"       ,  parameters: [90]      }
     ];
   }
 
-  colorPalette: iro.Color[];
 }

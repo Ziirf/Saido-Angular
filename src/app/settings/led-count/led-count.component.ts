@@ -7,14 +7,14 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class LedCountComponent{
 
-  @Output() 
+  @Output()
   closeWindowEvent = new EventEmitter<string>();
 
-  okBtn(){
+  okBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 
-  cancelBtn(){
+  cancelBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 }

@@ -10,11 +10,11 @@ export class RebootComponent {
   @Output() 
   closeWindowEvent = new EventEmitter<string>();
 
-  yesBtn(){
+  yesBtn() : void {
     this.closeWindowEvent.emit(null);
   }
 
-  noBtn(){
+  noBtn() : void {
     this.closeWindowEvent.emit(null);
   }
 }

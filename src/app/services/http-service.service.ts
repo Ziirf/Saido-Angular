@@ -10,7 +10,7 @@ export class HttpService {
   public latestRequest : string;
   public isOnline : boolean = false;
 
-  togglePower(){
+  togglePower() : void {
     let request = new XMLHttpRequest();
     
     if (this.isOnline == false){
@@ -25,7 +25,7 @@ export class HttpService {
     }
   }
 
-  postRequest(id: number, data: string){
+  postRequest(id: number, data: string) : void {
     let request = new XMLHttpRequest();
     this.latestRequest = `?${id}=${data}`;
     

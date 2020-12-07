@@ -10,19 +10,19 @@ export class ApperanceComponent {
   @Output() 
   closeWindowEvent = new EventEmitter<string>();
 
-  brightBtn(){
+  brightBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 
-  darkBtn(){
+  darkBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 
-  partyBtn(){
+  partyBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 
-  terminalBtn(){
+  terminalBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 

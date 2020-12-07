@@ -1,8 +1,13 @@
 <div id="colorPalette" *ngIf="colors">
 
-    <ng-template ngFor let-color [ngForOf]="colors">
+    <ng-template ngFor let-color [ngForOf]="colors"; let-i="index">
 
-        <button style.background-color="{{ color.rgbString }}" (click)="selectedColor(color)" class="sample"></button>
+        <button 
+            style.background-color="{{ color.rgbString }}"
+            [style.border-color]="selectedColorIndex == i ? 'orange' : 'black'"
+            (click)="selectedColor(color, i)" 
+            class="sample">
+        </button>
 
     </ng-template>
 

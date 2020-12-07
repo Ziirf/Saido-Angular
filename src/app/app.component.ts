@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { HttpService } from './services/http-service.service';
 
 @Component({
@@ -6,23 +6,29 @@ import { HttpService } from './services/http-service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'Saido';
 
   public burgerMenuToggle: boolean = false;
   
-  constructor(private httpService: HttpService) { }
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   // Toggles the powerswitch
-  togglePower(){
+  togglePower() : void {
     this.httpService.togglePower();
+  }
+
+  ngOnInit(){
+    // send a request for data.
   }
 
   // Listens to a click event, if the click is on the burgermenu icon -
   // then it will open the menu, if the click is outside the menu container -
   // then it will close the container.
   @HostListener('document:click', ['$event'])
-  closePopUp(e: any){
+  closePopUp(e: any) : void {
     let target = e.target || e.srcElement || e.currentTarget;
     let container = document.getElementById("burger-container");
 

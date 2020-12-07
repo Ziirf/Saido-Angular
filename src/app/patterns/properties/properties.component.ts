@@ -28,12 +28,12 @@ export class PropertiesComponent {
 
   // Listens to changes of the properties in this component.
   @HostListener('change')
-  ngOnChanges() {
+  ngOnChanges() : void {
     this.httpService.postRequest(this.pattern.id, this.hexConvert.intArrayToHex(this.pattern.parameters));
   }
 
   // Exit this component.
-  returnBtn(){
+  returnBtn() : void{
     this.returnEvent.emit(false);
   }
 }

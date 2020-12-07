@@ -7,12 +7,12 @@
     [min]=0 
     [max]=100 
     [(value)]="colorPicker.color.value" 
-    (valueChangedEvent)="colorChange($event)">
+    (valueChangedEvent)="brightnessChange($event)">
   </app-slider>
 
   <app-color-palette 
     [colors]="data.colorPalette" 
-    [colorWheel]="colorPicker" 
+    [colorWheel]="colorPicker"
     [allowAddColor]="true">
   </app-color-palette>
 
