@@ -4,13 +4,13 @@
 
         <button 
             style.background-color="{{ color.rgbString }}"
-            [style.border-color]="selectedColorIndex == i ? 'orange' : 'black'"
+            [style.border-color]="selectedColorIndex == i && highlight ? 'orange' : 'black'"
             (click)="selectedColor(color, i)" 
-            class="sample">
+            class="item">
         </button>
 
     </ng-template>
 
-    <button *ngIf="colors.length < 15 && allowAddColor == true && colorWheel != null" (click)="addColor()" class="sample">+</button>
+    <button *ngIf="colors.length < 15 && inputColor != null" (click)="addColor()" class="item">+</button>
     
 </div>

@@ -1,19 +1,25 @@
-<div id="colorWrap">
-  
-  <div id="colorWheel"></div>
+<!--<div id="colorWrap">
+
+  <app-colorwheel 
+    (colorChangeEvent)="colorChange($event)">
+  </app-colorwheel>
 
   <app-slider 
-    [color]="colorPicker.color" 
+    [color]="color" 
     [min]=0 
     [max]=100 
-    [(value)]="colorPicker.color.value" 
-    (valueChangedEvent)="brightnessChange($event)">
+    [(value)]="color.value" 
+    (valueChangedEvent)="color.value = $event">
   </app-slider>
 
   <app-color-palette 
-    [colors]="data.colorPalette" 
-    [colorWheel]="colorPicker"
-    [allowAddColor]="true">
+    [color]="color"
+    [colors]="data.colorPalette"
+    [highlight]="false"
+    (onSelectedColor)="colorSelected($event.color)">
   </app-color-palette>
 
-</div>
+</div>-->
+<app-toggle-switch>
+
+</app-toggle-switch>

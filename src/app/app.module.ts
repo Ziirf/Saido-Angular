@@ -18,6 +18,8 @@ import { PropertiesComponent } from './patterns/properties/properties.component'
 
 import { HttpService } from './services/http-service.service';
 import { HexService } from './services/hex.service';
+import { ColorwheelComponent } from './components/colorwheel/colorwheel.component';
+import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { HexService } from './services/hex.service';
     EditPaletteComponent,
     SliderComponent,
     ColorPaletteComponent,
-    PropertiesComponent
+    PropertiesComponent,
+    ColorwheelComponent,
+    ToggleSwitchComponent
   ],
   imports: [
     BrowserModule,

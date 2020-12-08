@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import iro from '@jaames/iro';
 
 @Component({
   selector: 'app-edit-palette',
