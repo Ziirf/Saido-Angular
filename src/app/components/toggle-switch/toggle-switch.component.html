@@ -1,4 +1,13 @@
-<label class="switch">
+<label class="switch" [ngStyle]="{'$color': 'white'}">
     <input type="checkbox">
-    <span class="slider"></span>
+
+    <span class="slider"
+        (click)="sliderChange()"
+        [ngStyle]="{'background-color': value ? bgColor: '#CCC'}">
+    </span>
+      
+    <span class="slider-inside"
+        (click)="sliderChange()"
+        [ngStyle]="{'left': !value ? '4px': '50px', 'background-color': color}">
+    </span>
 </label>

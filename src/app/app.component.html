@@ -14,16 +14,15 @@
   </div>
   
   <div class="container bottom">
+
     <div id="burger-menu" class="menu-icon">
       <span class="menu-icon"></span>
       <span class="menu-icon"></span>
       <span class="menu-icon"></span>
     </div>
-    <div class="power-toggle" id="power-toggle">
-      <input type="checkbox" name="power-toggle" class="power-toggle-checkbox" id="power-toggle-checkbox" (click)="togglePower()">
-      <label class="power-toggle-label" for="power-toggle-checkbox"></label>
-    </div>
+    <app-toggle-switch id="power-toggle" (value)="togglePower()"></app-toggle-switch>
   </div>
+
   <div *ngIf="burgerMenuToggle" id="burger-container">
     <ul>
       <li><a routerLink="/">Home</a></li>
@@ -31,4 +30,5 @@
       <li><a routerLink="/settings">Settings</a></li>
     </ul>
   </div>
+  
 </body>
