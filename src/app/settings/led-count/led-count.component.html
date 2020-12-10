@@ -1,8 +1,24 @@
-<div class="led-container">
+<div class="led-container" 
+    [ngClass]="data.style.popUp">
+
     <p>LED Changes will only take effect after reboot</p>
-    <input type="text">
+
+    <input type="text"
+        [ngClass]="data.style.input"
+        [(ngModel)]="ledCount">
+
     <div class="button-container">
-        <button (click)="okBtn()">OK</button>
-        <button (click)="cancelBtn()">Cancel</button>
+        <button
+            [ngClass]="data.style.button"
+            [disabled]="checkForNumber()"
+            (click)="okBtn()">OK
+        </button>
+
+        <button
+            [ngClass]="data.style.button"
+            (click)="cancelBtn()">Cancel
+        </button>
+
     </div>
+
 </div>

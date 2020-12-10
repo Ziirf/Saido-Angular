@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -30,9 +30,16 @@ export class HttpService {
     this.latestRequest = `?${id}=${data}`;
     
     if(this.isOnline){
-      request.open('POST', this.latestRequest);
+      request.open('POST', this.latestRequest || `?${id}=${data}`);
       request.send();
     }
+  }
+
+  // Not finished
+  postSettingRequst(id: number, data: string) {
+    let request = new XMLHttpRequest();
+    request.open('POST', `?${id}=${data}`);
+    request.send();
   }
 
 }

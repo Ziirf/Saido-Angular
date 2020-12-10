@@ -1,34 +1,61 @@
-<body>
-  <header>
+<body [ngClass]="data.style.body">
+
+  <header [ngClass]="data.style.header">
+
     <h1><a routerLink="/">Saido</a></h1>
+
     <nav>
+
       <ul>
+
         <li><a routerLink="/">Home</a></li>
+
         <li><a routerLink="/patterns">Patterns</a></li>
+
         <li><a routerLink="/settings">Settings</a></li>
+
       </ul>
+
     </nav>
+
   </header>
-  <div class="container">
+
+  <div class="container" [ngClass]="data.style.contentContainer">
+
     <router-outlet></router-outlet>
+
   </div>
   
-  <div class="container bottom">
+  <div class="container bottom" [ngClass]="data.style.bottomContainer">
 
     <div id="burger-menu" class="menu-icon">
-      <span class="menu-icon"></span>
-      <span class="menu-icon"></span>
-      <span class="menu-icon"></span>
+
+      <span class="menu-icon" [ngClass]="data.style.burgerMenu"></span>
+
+      <span class="menu-icon" [ngClass]="data.style.burgerMenu"></span>
+
+      <span class="menu-icon" [ngClass]="data.style.burgerMenu"></span>
+
     </div>
+
     <app-toggle-switch id="power-toggle" (value)="togglePower()"></app-toggle-switch>
+
   </div>
 
-  <div *ngIf="burgerMenuToggle" id="burger-container">
+  <div id="burger-container" 
+    [ngClass]="data.style.burgerMenuContainer"
+    *ngIf="burgerMenuToggle">
+    
     <ul>
+      
       <li><a routerLink="/">Home</a></li>
+
       <li><a routerLink="/patterns">Patterns</a></li>
+
       <li><a routerLink="/settings">Settings</a></li>
+
     </ul>
+
   </div>
   
 </body>

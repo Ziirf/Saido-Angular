@@ -2,15 +2,26 @@
 
     <div class="container">
 
-        <app-properties [brightness]="brightness.value" [pattern]="selectedPattern" (returnEvent)="editProperties = $event"></app-properties>
+        <app-properties 
+            [brightness]="brightness.value" 
+            [pattern]="selectedPattern" 
+            (returnEvent)="editProperties = $event">
+        </app-properties>
 
     </div>
 
 </div>
 
 <div>
+
     <p>Brightness</p>
-    <app-slider class="app-slider" min=0 max=100 value=0 (valueChangedEvent)="brightness.value = $event" #brightness></app-slider>
+
+    <app-slider class="app-slider" 
+        min=0 max=100 value=0 
+        (valueChangedEvent)="brightness.value = $event" 
+        #brightness>
+    </app-slider>
+
 </div>
 
 
@@ -21,12 +32,17 @@
             <ng-template ngFor let-pattern [ngForOf]="patternsArray">
     
                 <button class="button"
-                (click)="clickPattern(pattern)"
-                [style.border-color]="pattern == selectedPattern ? 'orange' : null">{{ pattern.name }}</button>
+                    [ngClass]="pattern == selectedPattern ? data.style.buttonActive : data.style.button"
+                    (click)="clickPattern(pattern)">{{ pattern.name }}
+                </button>
     
             </ng-template>
     
-            <button id="editBtn" [disabled]="!selectedPattern" (click)="editProperties = !editProperties">Change Pattern Properties</button>
+            <button id="editBtn" 
+                [ngClass]="data.style.button"
+                [disabled]="!selectedPattern"
+                (click)="editProperties = !editProperties">Change Pattern Properties
+            </button>
     
     </div>
     

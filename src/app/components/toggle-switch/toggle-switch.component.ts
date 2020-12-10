@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-toggle-switch',
@@ -6,6 +7,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./toggle-switch.component.scss']
 })
 export class ToggleSwitchComponent {
+
+  data: DataService;
 
   @Input("bgColor")
   bgColor: string = "orange";
@@ -18,7 +21,8 @@ export class ToggleSwitchComponent {
 
   value: boolean = false;
 
-  constructor() { 
+  constructor(private _data: DataService) {
+    this.data = _data;
     this.onSliderChange.emit(this.value);
   }
 

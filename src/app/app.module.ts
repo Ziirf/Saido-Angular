@@ -20,6 +20,7 @@ import { HttpService } from './services/http-service.service';
 import { HexService } from './services/hex.service';
 import { ColorwheelComponent } from './components/colorwheel/colorwheel.component';
 import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     HttpService, 

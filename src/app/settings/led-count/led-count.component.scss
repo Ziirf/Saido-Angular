@@ -1,9 +1,6 @@
 @import '../../../scss/elements.scss';
 
-.led-container{
-    background-color: #fff;
-    border: 5px black solid;
-    
+.led-container{    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto 1fr;

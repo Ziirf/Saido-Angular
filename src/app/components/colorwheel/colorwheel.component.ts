@@ -28,8 +28,6 @@ export class ColorwheelComponent implements OnInit, OnDestroy {
         {
           component: iro.ui.Wheel,
           options: {
-            borderColor: "#E3E3E3",
-            borderWidth: 1,
             wheelLightness: false
           }
         }

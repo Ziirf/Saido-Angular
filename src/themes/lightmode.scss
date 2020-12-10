@@ -1,0 +1,116 @@
+$lightmode-primary-color: rgb(250, 177, 42);
+$lightmode-primary-bgColor: #DDD;
+$lightmode-highlight: #FFF;
+
+
+
+.light-header{
+    background-color: $lightmode-primary-bgColor;
+    color: $lightmode-primary-color;
+}
+
+.light-body{
+    background-color: lighten($lightmode-primary-bgColor, 15%);
+}
+
+.light-content-container{
+    background-color: $lightmode-primary-bgColor;
+}
+
+.light-buttom-container{
+    background-color: $lightmode-primary-bgColor;
+}
+
+.light-burger-menu{
+    background-color: $lightmode-primary-color;
+}
+
+.light-burger-menu-container{
+    background-color: $lightmode-primary-bgColor;
+    color: $lightmode-primary-color;    
+    border-top: 1px solid $lightmode-primary-color;
+}
+
+.light-pop-up{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-primary-color;
+    color: $lightmode-primary-color;    
+}
+
+.light-warning{
+    color: #A00;
+}
+
+.light-input{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-primary-color;
+    color: $lightmode-primary-color;    
+}
+
+.light-button{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-primary-color;
+    color: $lightmode-primary-color;
+
+    &:hover{
+        border: 1px solid $lightmode-highlight;
+        color: $lightmode-highlight;
+    }
+
+    &:disabled{
+        border: 1px solid darken($lightmode-primary-color, 20%);
+        color: darken($lightmode-primary-color, 20%);
+    }
+}
+
+.light-button-active{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-highlight;
+    color: $lightmode-primary-color;
+
+    &:hover{
+        border: 1px solid $lightmode-highlight;
+        color: $lightmode-highlight;
+    }
+}
+
+.light-color-palette{
+    background-color: $lightmode-primary-bgColor;
+    border: none;
+    color: $lightmode-primary-color;
+}
+
+.light-color-palette-active{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-highlight;
+    color: $lightmode-primary-color;
+}
+
+.light-color-palette-add{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-primary-color;
+    color: $lightmode-primary-color;
+}
+
+.light-slider{
+    background-color: $lightmode-primary-bgColor;
+    border: 1px solid $lightmode-primary-color;
+    color: $lightmode-primary-color;
+
+    &::-webkit-slider-thumb{
+        background-color: $lightmode-primary-color;
+    }
+
+    &::-moz-range-thumb{
+        background-color: $lightmode-primary-color;
+    }
+}
+
+.light-switch{
+    border: 1px solid $lightmode-primary-color;
+
+}
+
+.light-switch-inside{
+    background-color: $lightmode-primary-color;
+}

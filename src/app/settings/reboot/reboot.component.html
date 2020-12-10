@@ -1,9 +1,24 @@
-<div class="reboot-container">
-    <h1>WARNING</h1>
+<div class="reboot-container"
+    [ngClass]="data.style.popUp">
+
+    <h1 [ngClass]="data.style.warning">WARNING</h1>
+
     <p>You will lose connection to the controller and WIFI. Rebooting takes ~30 seconds</p>
+
     <p>Are you sure?</p>
+
     <div class="button-container">
-        <button (click)="yesBtn()">Yes</button>
-        <button (click)="noBtn()">No</button>
+
+        <button
+            [ngClass]="data.style.button"
+            (click)="yesBtn()">Yes
+        </button>
+
+        <button
+            [ngClass]="data.style.button" 
+            (click)="noBtn()">No
+        </button>
+
     </div>
+
 </div>

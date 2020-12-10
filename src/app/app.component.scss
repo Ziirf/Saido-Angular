@@ -9,7 +9,7 @@ body{
                             ".      content     ."
                             ".      bottom      .";
 
-    background-color: darken($BackgroundColor, 15%);
+    //background-color: darken($BackgroundColor, 15%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     user-select:none;
     
@@ -20,8 +20,8 @@ body{
         justify-content: space-between;
         align-items: center;
 
-        background-color: $BaseColor;
-        color: $PrimaryColor;
+        //background-color: $BaseColor;
+        //color: $PrimaryColor;
 
         h1 {
             margin-left: 10px;
@@ -42,7 +42,7 @@ body{
 
     .container{
         grid-area: content;
-        background-color: $BackgroundColor;
+        //background-color: $BackgroundColor;
     }
 
     .bottom{
@@ -96,7 +96,7 @@ body{
                 span{
                     width: 100%;
                     height: 15%;
-                    background-color: $BaseColor;
+                    //background-color: $BaseColor;
                 }
             }
         }
@@ -110,7 +110,7 @@ body{
             bottom: 0px;    left: 0px;
             z-index: 1;
 
-            background-color: $BaseColor;
+            //background-color: $BaseColor;
 
             ul{
                 display: flex;
@@ -127,7 +127,7 @@ body{
 }
 
 a {
-    color: $PrimaryColor;
+    color: inherit; //$PrimaryColor;
     text-decoration: none;
     outline: 0;
 }

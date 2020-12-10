@@ -9,21 +9,22 @@ import iro from '@jaames/iro';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent{
   
   // Variables of this class.
+  data: DataService;
   colorPicker : iro.ColorPicker;
-  color : iro.Color
+  color: iro.Color
 
   constructor(
     private httpService: HttpService,
     private hexConvert: HexService,
-    public data: DataService
-  ) { }
-  
-  ngOnInit(): void {
-
+    private _data: DataService
+  ) { 
+    this.data = _data;
   }
+  
+
 
   colorChange(color: iro.Color){
     this.color = color;

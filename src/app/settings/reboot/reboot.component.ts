@@ -1,4 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
+import { HttpService } from 'src/app/services/http-service.service';
 
 @Component({
   selector: 'app-reboot',
@@ -7,10 +9,20 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class RebootComponent {
 
+  data: DataService;
+
   @Output() 
   closeWindowEvent = new EventEmitter<string>();
 
-  yesBtn() : void {
+  constructor(
+    private httpService: HttpService,
+    public _data: DataService
+  ) { 
+    this.data = _data;
+  }
+
+  yesBtn(): void {
+    this.httpService.postSettingRequst(1000, null);
     this.closeWindowEvent.emit(null);
   }
 

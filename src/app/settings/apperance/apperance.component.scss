@@ -1,9 +1,6 @@
 @import '../../../scss/elements.scss';
 
 .apperance-container{
-    background-color: white;
-    border: 5px black solid;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;

@@ -8,14 +8,15 @@ import { DataService } from '../../services/data.service';
 })
 export class EditPaletteComponent {
 
+  data: DataService;
   selectedColorIndex: number;
 
   @Output() 
   closeWindowEvent = new EventEmitter<null>();
 
-  constructor(
-    public data: DataService
-  ) { }
+  constructor(public _data: DataService) { 
+    this.data = _data;
+  }
 
   // Changes the selected color and selected color index when clicked on a color from the palette.
   selectedColorChange(event: any) : void {

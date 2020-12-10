@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { DataService } from './services/data.service';
 import { HttpService } from './services/http-service.service';
 
 @Component({
@@ -9,11 +10,15 @@ import { HttpService } from './services/http-service.service';
 export class AppComponent implements OnInit{
   title = 'Saido';
 
-  public burgerMenuToggle: boolean = false;
+  data: DataService;
+  burgerMenuToggle: boolean = false;
   
   constructor(
-    private httpService: HttpService
-  ) { }
+    private httpService: HttpService,
+    private _data: DataService
+  ) { 
+    this.data = _data;
+  }
 
   // Toggles the powerswitch
   togglePower() : void {
@@ -32,7 +37,7 @@ export class AppComponent implements OnInit{
     let target = e.target || e.srcElement || e.currentTarget;
     let container = document.getElementById("burger-container");
 
-    if(target.className == "menu-icon"){
+    if(target.classList.contains("menu-icon")){
       this.burgerMenuToggle = true;
     }
     else if (target != container && target.tagName != "LI") {

@@ -4,17 +4,17 @@ button{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border: black 1px solid;
+    //border: black 1px solid;
     
 
     &:hover{
-        color: $PrimaryColor;
-        border: $PrimaryColor 1px solid;
+        //color: $PrimaryColor;
+        //border: $PrimaryColor 1px solid;
         transition: all .25s ease-in-out;
     }
 
     &:active{
         transform: none;
-        background-color: darken($BackgroundColor, 25%);
+        //background-color: darken($BackgroundColor, 25%);
     }
 }

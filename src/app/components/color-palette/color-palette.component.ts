@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import iro from '@jaames/iro';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-color-palette',
@@ -7,6 +8,8 @@ import iro from '@jaames/iro';
   styleUrls: ['./color-palette.component.scss']
 })
 export class ColorPaletteComponent{
+
+  data: DataService;
   
   // Inputs the array of the colorpalette.
   @Input('colors')
@@ -26,6 +29,12 @@ export class ColorPaletteComponent{
   // Sends out an object of the selected Color and its index.
   @Output()
   public onSelectedColor = new EventEmitter<object>();
+
+  constructor(
+    private _data: DataService
+  ) {
+    this.data = _data;
+  }
 
   // Adds the selected color from the colorwheel to the colorArray.
   private addColor() : void {

@@ -1,9 +1,28 @@
-<div class="wifi-container">
+<div class="wifi-container" 
+    [ngClass]="data.style.popUp">
+
     <p>Wifi changes will only take effect after rebooting.</p>
-    <input type="text">
-    <input type="text">
+
+    <input type="text" 
+        [(ngModel)]="ssid"
+        [ngClass]="data.style.input">
+
+    <input type="text" 
+        [(ngModel)]="password"
+        [ngClass]="data.style.input">
+
     <div class="button-container">
-        <button (click)="okBtn()">Ok</button>
-        <button (click)="cancelBtn()">Cancel</button>
+
+        <button 
+            [ngClass]="data.style.button"
+            (click)="okBtn()">Ok
+        </button>
+
+        <button
+            [ngClass]="data.style.button" 
+            (click)="cancelBtn()">Cancel
+        </button>
+
     </div>
+
 </div>

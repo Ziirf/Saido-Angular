@@ -2,15 +2,18 @@
 
     <ng-template ngFor let-color [ngForOf]="colors"; let-i="index">
 
-        <button 
+        <button class="item"
+            [ngClass]="selectedColorIndex == i && highlight ? data.style.colorPaletteActive : data.style.colorPalette"
             style.background-color="{{ color.rgbString }}"
-            [style.border-color]="selectedColorIndex == i && highlight ? 'orange' : 'black'"
-            (click)="selectedColor(color, i)" 
-            class="item">
+            (click)="selectedColor(color, i)">
         </button>
 
     </ng-template>
 
-    <button *ngIf="colors.length < 15 && inputColor != null" (click)="addColor()" class="item">+</button>
+    <button class="item"
+        [ngClass]=data.style.colorPaletteAdd
+        *ngIf="colors.length < 15 && inputColor != null" 
+        (click)="addColor()">+
+    </button>
     
 </div>

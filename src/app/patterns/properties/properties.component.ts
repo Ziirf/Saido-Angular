@@ -11,6 +11,8 @@ import { DataService } from '../../services/data.service';
 })
 export class PropertiesComponent {
 
+  data: DataService;
+
   @Input("pattern")
   pattern : PatternModel;
 
@@ -23,8 +25,10 @@ export class PropertiesComponent {
   constructor(
     private httpService: HttpService,
     private hexConvert: HexService,
-    private data: DataService
-  ) { }
+    private _data: DataService
+  ) { 
+    this.data = _data;
+  }
 
   // Listens to changes of the properties in this component.
   @HostListener('change')

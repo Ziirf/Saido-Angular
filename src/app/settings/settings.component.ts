@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-settings',
@@ -8,6 +9,11 @@ import { Component, HostListener } from '@angular/core';
 export class SettingsComponent {
 
   popUp: string;
+  data: DataService
+
+  constructor(private _data: DataService) {
+    this.data = _data;
+  }
 
   // Hostlistener that checks if there is a click outside of the
   // the scope of the pop up div.

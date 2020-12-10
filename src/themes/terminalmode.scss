@@ -1,0 +1,116 @@
+$terminal-primary-color: #0A0;
+$terminal-primary-bgColor: #000;
+$terminal-highlight: #FFF;
+
+
+
+.terminal-header{
+    background-color: $terminal-primary-bgColor;
+    color: $terminal-primary-color;
+}
+
+.terminal-body{
+    background-color: lighten($terminal-primary-bgColor, 15%);
+}
+
+.terminal-content-container{
+    background-color: $terminal-primary-bgColor;
+}
+
+.terminal-buttom-container{
+    background-color: $terminal-primary-bgColor;
+}
+
+.terminal-burger-menu{
+    background-color: $terminal-primary-color;
+}
+
+.terminal-burger-menu-container{
+    background-color: $terminal-primary-bgColor;
+    color: $terminal-primary-color;    
+    border-top: 1px solid $terminal-primary-color;
+}
+
+.terminal-pop-up{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-primary-color;
+    color: $terminal-primary-color;    
+}
+
+.terminal-warning{
+    color: #A00;
+}
+
+.terminal-input{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-primary-color;
+    color: $terminal-primary-color;    
+}
+
+.terminal-button{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-primary-color;
+    color: $terminal-primary-color;
+
+    &:hover{
+        border: 1px solid $terminal-highlight;
+        color: $terminal-highlight;
+    }
+
+    &:disabled{
+        border: 1px solid darken($terminal-primary-color, 20%);
+        color: darken($terminal-primary-color, 20%);
+    }
+}
+
+.terminal-button-active{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-highlight;
+    color: $terminal-primary-color;
+
+    &:hover{
+        border: 1px solid $terminal-highlight;
+        color: $terminal-highlight;
+    }
+}
+
+.terminal-color-palette{
+    background-color: $terminal-primary-bgColor;
+    border: none;
+    color: $terminal-primary-color;
+}
+
+.terminal-color-palette-active{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-highlight;
+    color: $terminal-primary-color;
+}
+
+.terminal-color-palette-add{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-primary-color;
+    color: $terminal-primary-color;
+}
+
+.terminal-slider{
+    background-color: $terminal-primary-bgColor;
+    border: 1px solid $terminal-primary-color;
+    color: $terminal-primary-color;
+
+    &::-webkit-slider-thumb{
+        background-color: $terminal-primary-color;
+    }
+
+    &::-moz-range-thumb{
+        background-color: $terminal-primary-color;
+    }
+}
+
+.terminal-switch{
+    border: 1px solid $terminal-primary-color;
+
+}
+
+.terminal-switch-inside{
+    background-color: $terminal-primary-color;
+}

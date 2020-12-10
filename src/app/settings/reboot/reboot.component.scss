@@ -1,9 +1,6 @@
 @import '../../../scss/elements.scss';
 
 .reboot-container{
-    background-color: white;
-    border: 5px red solid;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto auto 1fr;

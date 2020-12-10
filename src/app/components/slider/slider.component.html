@@ -1,7 +1,11 @@
 <div class="slidecontainer">
-    <input type="range" 
-    [min]="minValue" [max]="maxValue" 
-    [(value)]="selectedValue" (input)="valueChanged(slider.value)" 
-    [ngStyle]="setStyle()"
-    class="slider" #slider>
+
+    <input class="slider" type="range" 
+        [ngClass]="data.style.slider"
+        [min]="minValue" [max]="maxValue" 
+        [(value)]="selectedValue" 
+        (input)="valueChanged(slider.value)" 
+        [ngStyle]="setStyle()"
+        #slider>
+
 </div>

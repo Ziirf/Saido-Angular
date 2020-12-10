@@ -1,6 +1,6 @@
-<div class="apperance-container">
-    <button (click)="brightBtn()">Bright</button>
-    <button (click)="darkBtn()">Dark</button>
-    <button (click)="partyBtn()">Party</button>
-    <button (click)="terminalBtn()">Terminal</button>
+<div class="apperance-container" [ngClass]="data.style.popUp">
+    <button (click)="brightBtn()" [ngClass]="data.style.button">Bright</button>
+    <button (click)="darkBtn()" [ngClass]="data.style.button">Dark</button>
+    <button (click)="partyBtn()" [ngClass]="data.style.button">Party</button>
+    <button (click)="terminalBtn()" [ngClass]="data.style.button">Terminal</button>
 </div>

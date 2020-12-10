@@ -13,6 +13,6 @@
 #pop-up-container{
     position: absolute;
     width: 96%; height: auto;
-    margin-top: 50%; margin-bottom: 50%;
-    left: 2%; top: 2%;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import iro from '@jaames/iro';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-slider',
@@ -8,6 +9,7 @@ import iro from '@jaames/iro';
 })
 export class SliderComponent {
 
+  data: DataService;
   // The lowest value of the slider
   @Input("min")
   public minValue : number = 0;
@@ -26,7 +28,11 @@ export class SliderComponent {
 
   // Output for when the selected value change
   @Output()
-  valueChangedEvent : EventEmitter<number> = new EventEmitter<number>();
+  valueChangedEvent: EventEmitter<number> = new EventEmitter<number>();
+  
+  constructor(_data: DataService) {
+    this.data = _data;
+  }
   
   // input have to be converted from string to a number in order to work.
   valueChanged(input: string) : void {

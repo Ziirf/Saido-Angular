@@ -1,28 +1,33 @@
-<div class="container">
+<div [ngClass]="data.style.popUp">
 
     <p>Move a color by selecting it and using the arrows. Delete a color by selecting it and press the delete.</p>
     
-    <app-color-palette
+    <app-color-palette class="palette"
         (onSelectedColor)="selectedColorChange($event)"
         [colors]="data.colorPalette"
-        [selectedColorIndex]="selectedColorIndex"
-        class="palette">
+        [selectedColorIndex]="selectedColorIndex">
     </app-color-palette>
 
     <div class="button-container">
-        <button (click)="okBtn()">OK</button>
+        <button
+            [ngClass]="data.style.button"
+            (click)="okBtn()">OK
+        </button>
         <button 
             [disabled]="!data.colorPalette[selectedColorIndex] || selectedColorIndex <= 0" 
+            [ngClass]="data.style.button"
             (click)="changePosition(-1)">◀
         </button>
 
         <button 
-            [disabled]="!data.colorPalette[selectedColorIndex] || selectedColorIndex >= (data.colorPalette.length - 1)" 
+            [disabled]="!data.colorPalette[selectedColorIndex] || selectedColorIndex >= (data.colorPalette.length - 1)"
+            [ngClass]="data.style.button"
             (click)="changePosition(1)">▶
         </button>
 
         <button 
-            [disabled]="!data.colorPalette[selectedColorIndex]" 
+            [disabled]="!data.colorPalette[selectedColorIndex]"
+            [ngClass]="data.style.button"
             (click)="deleteBtn()">X
         </button>
     </div>

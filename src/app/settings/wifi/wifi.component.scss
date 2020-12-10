@@ -1,9 +1,6 @@
 @import '../../../scss/elements.scss';
 
 .wifi-container{
-    background-color: #fff;
-    border: 5px black solid;
-    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr auto auto 1fr;
