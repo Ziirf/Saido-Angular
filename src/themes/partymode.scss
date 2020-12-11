@@ -1,0 +1,130 @@
+$partymode-primary-color:  orange;
+$partymode-primary-baseColor: #3C3C3C;
+$partymode-primary-bgColor: #FAFAFA;
+$partymode-highparty:  orange;
+
+$BackgroundColor: #FAFAFA;
+$PrimaryColor: orange;
+
+
+
+.party-header{
+    background-color: $partymode-primary-baseColor;
+    color: $partymode-primary-color;
+}
+
+.party-body{
+    background-color: darken($partymode-primary-bgColor, 15%);
+}
+
+.party-content-container{
+    background-color: $partymode-primary-bgColor;
+}
+
+.party-buttom-container{
+    background-color: $partymode-primary-bgColor;
+}
+
+.party-burger-menu{
+    background-color: $partymode-primary-baseColor;
+}
+
+.party-burger-menu-container{
+    background-color: $partymode-primary-baseColor;
+    color: $partymode-primary-color;    
+    border-top: 1px solid $partymode-primary-baseColor;
+}
+
+.party-pop-up{
+    background-color: darken($partymode-primary-bgColor, 15%);
+    border: 1px solid $partymode-primary-baseColor;
+    color: $partymode-primary-baseColor;    
+}
+
+.party-warning{
+    color: #A00;
+}
+
+.party-input{
+    background-color: $partymode-primary-bgColor;
+    border: 1px solid $partymode-primary-baseColor;
+    color: $partymode-primary-baseColor;    
+}
+
+.party-button{
+    background-color: darken($partymode-primary-bgColor, 10%);
+    border: 1px solid $partymode-primary-baseColor;
+    color: $partymode-primary-baseColor;
+
+    &:hover{
+        border: 1px solid $partymode-highparty;
+        color: $partymode-highparty;
+    }
+
+    &:disabled{
+        background-color: darken($partymode-primary-bgColor, 3%);
+        border: 1px solid $partymode-primary-baseColor;
+        color: darken($partymode-primary-baseColor, 40%);
+    }
+}
+
+.party-button-active{
+    background-color: darken($partymode-primary-bgColor, 10%);
+    border: 1px solid $partymode-highparty;
+    color: $partymode-primary-color;
+
+    &:hover{
+        border: 1px solid $partymode-highparty;
+        color: $partymode-highparty;
+    }
+}
+
+.party-color-palette{
+    background-color: $partymode-primary-bgColor;
+    border: none;
+    color: $partymode-primary-baseColor;
+}
+
+.party-color-palette-active{
+    background-color: $partymode-primary-bgColor;
+    border: 1px solid $partymode-primary-baseColor;
+    color: $partymode-primary-color;
+}
+
+.party-color-palette-add{
+    background-color: $partymode-primary-bgColor;
+    border: 1px solid $partymode-primary-baseColor;
+    color: $partymode-primary-baseColor;
+}
+
+.party-slider{
+    background-color: darken($partymode-primary-bgColor, 5%);
+    color: $partymode-primary-color;
+
+    &::-webkit-slider-thumb{
+        background-color: $partymode-primary-color;
+    }
+
+    &::-moz-range-thumb{
+        background-color: $partymode-primary-color;
+    }
+}
+
+.party-switch{
+    background-color: darken($partymode-primary-bgColor, 5%);
+    border: 1px solid $partymode-primary-baseColor;
+}
+
+.party-switch-active{
+    background-color: darken($partymode-primary-bgColor, 5%);
+    border: 1px solid $partymode-primary-baseColor;
+
+}
+
+.party-switch-inside{
+    background-color: darken($partymode-primary-color, 25%);
+}
+
+.party-switch-inside-active{
+    background-color: $partymode-primary-color;
+}

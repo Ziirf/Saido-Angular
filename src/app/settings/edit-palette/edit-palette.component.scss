@@ -1,9 +1,6 @@
 @import '../../../scss/elements.scss';
 
-.container{
-    background-color: white;
-    border: 5px black solid;
-    
+.container{    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);

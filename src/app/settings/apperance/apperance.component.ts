@@ -17,19 +17,23 @@ export class ApperanceComponent {
     this.data = _data;
   }
 
-  brightBtn() : void{
+  brightBtn(): void{
+    this._data.style = this._data.styles[0];
     this.closeWindowEvent.emit(null);
   }
 
   darkBtn() : void{
+    this._data.style = this._data.styles[1];
     this.closeWindowEvent.emit(null);
   }
 
   partyBtn() : void{
+    this._data.style = this._data.styles[2];
     this.closeWindowEvent.emit(null);
   }
 
   terminalBtn() : void{
+    this._data.style = this._data.styles[3];
     this.closeWindowEvent.emit(null);
   }
 

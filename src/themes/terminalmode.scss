@@ -108,9 +108,16 @@ $terminal-highlight: #FFF;
 
 .terminal-switch{
     border: 1px solid $terminal-primary-color;
+}
 
+.terminal-switch-active{
+    border: 1px solid $terminal-primary-color;
 }
 
 .terminal-switch-inside{
+    background-color: $terminal-primary-color;
+}
+
+.terminal-switch-inside-active{
     background-color: $terminal-primary-color;
 }

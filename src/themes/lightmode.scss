@@ -1,11 +1,15 @@
-$lightmode-primary-color: rgb(250, 177, 42);
-$lightmode-primary-bgColor: #DDD;
-$lightmode-highlight: #FFF;
+$lightmode-primary-color:  orange;
+$lightmode-primary-baseColor: #3C3C3C;
+$lightmode-primary-bgColor: #FAFAFA;
+$lightmode-highlight:  orange;
+
+$BackgroundColor: #FAFAFA;
+$PrimaryColor: orange;
 
 
 
 .light-header{
-    background-color: $lightmode-primary-bgColor;
+    background-color: $lightmode-primary-baseColor;
     color: $lightmode-primary-color;
 }
 
@@ -22,19 +26,23 @@ $lightmode-highlight: #FFF;
 }
 
 .light-burger-menu{
-    background-color: $lightmode-primary-color;
+    background-color: $lightmode-primary-baseColor;
 }
 
 .light-burger-menu-container{
-    background-color: $lightmode-primary-bgColor;
+    background-color: $lightmode-primary-baseColor;
     color: $lightmode-primary-color;    
-    border-top: 1px solid $lightmode-primary-color;
+    border-top: 1px solid $lightmode-primary-baseColor;
 }
 
 .light-pop-up{
-    background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-primary-color;
-    color: $lightmode-primary-color;    
+    background-color: darken($lightmode-primary-bgColor, 15%);
+    border: 1px solid $lightmode-primary-baseColor;
+    color: $lightmode-primary-baseColor;    
+}
+
+.light-text{
+    color: $lightmode-primary-color;
 }
 
 .light-warning{
@@ -43,14 +51,14 @@ $lightmode-highlight: #FFF;
 
 .light-input{
     background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-primary-color;
-    color: $lightmode-primary-color;    
+    border: 1px solid $lightmode-primary-baseColor;
+    color: $lightmode-primary-baseColor;    
 }
 
 .light-button{
-    background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-primary-color;
-    color: $lightmode-primary-color;
+    background-color: darken($lightmode-primary-bgColor, 10%);
+    border: 1px solid $lightmode-primary-baseColor;
+    color: $lightmode-primary-baseColor;
 
     &:hover{
         border: 1px solid $lightmode-highlight;
@@ -58,13 +66,14 @@ $lightmode-highlight: #FFF;
     }
 
     &:disabled{
-        border: 1px solid darken($lightmode-primary-color, 20%);
-        color: darken($lightmode-primary-color, 20%);
+        background-color: darken($lightmode-primary-bgColor, 3%);
+        border: 1px solid $lightmode-primary-baseColor;
+        color: lighten($lightmode-primary-baseColor, 40%);
     }
 }
 
 .light-button-active{
-    background-color: $lightmode-primary-bgColor;
+    background-color: darken($lightmode-primary-bgColor, 10%);
     border: 1px solid $lightmode-highlight;
     color: $lightmode-primary-color;
 
@@ -77,24 +86,23 @@ $lightmode-highlight: #FFF;
 .light-color-palette{
     background-color: $lightmode-primary-bgColor;
     border: none;
-    color: $lightmode-primary-color;
+    color: $lightmode-primary-baseColor;
 }
 
 .light-color-palette-active{
     background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-highlight;
+    border: 1px solid $lightmode-primary-baseColor;
     color: $lightmode-primary-color;
 }
 
 .light-color-palette-add{
     background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-primary-color;
-    color: $lightmode-primary-color;
+    border: 1px solid $lightmode-primary-baseColor;
+    color: $lightmode-primary-baseColor;
 }
 
 .light-slider{
-    background-color: $lightmode-primary-bgColor;
-    border: 1px solid $lightmode-primary-color;
+    background-color: darken($lightmode-primary-bgColor, 5%);
     color: $lightmode-primary-color;
 
     &::-webkit-slider-thumb{
@@ -107,10 +115,20 @@ $lightmode-highlight: #FFF;
 }
 
 .light-switch{
-    border: 1px solid $lightmode-primary-color;
+    background-color: darken($lightmode-primary-bgColor, 5%);
+    border: 1px solid $lightmode-primary-baseColor;
+}
+
+.light-switch-active{
+    background-color: darken($lightmode-primary-bgColor, 5%);
+    border: 1px solid $lightmode-primary-baseColor;
 
 }
 
 .light-switch-inside{
+    background-color: darken($lightmode-primary-color, 25%);
+}
+
+.light-switch-inside-active{
     background-color: $lightmode-primary-color;
 }

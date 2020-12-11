@@ -1,0 +1,129 @@
+$darkmode-primary-color: rgb(0, 114, 190);
+$darkmode-primary-textColor: $darkmode-primary-color;
+$darkmode-primary-baseColor: #222;
+$darkmode-primary-bgColor: #3C3C3C;
+$darkmode-highlight:   rgb(0, 127, 211);
+
+
+
+.dark-header{
+    background-color: $darkmode-primary-baseColor;
+    color: $darkmode-primary-color;
+}
+
+.dark-body{
+    background-color: darken($darkmode-primary-bgColor, 15%);
+}
+
+.dark-content-container{
+    background-color: $darkmode-primary-bgColor;
+}
+
+.dark-buttom-container{
+    background-color: $darkmode-primary-bgColor;
+}
+
+.dark-burger-menu{
+    background-color: $darkmode-primary-baseColor;
+}
+
+.dark-burger-menu-container{
+    background-color: $darkmode-primary-baseColor;
+    color: $darkmode-primary-textColor;    
+}
+
+.dark-pop-up{
+    background-color: darken($darkmode-primary-bgColor, 15%);
+    border: 1px solid $darkmode-primary-baseColor;
+    color: $darkmode-primary-textColor;    
+}
+
+.dark-text{
+    color: $darkmode-primary-color;
+}
+
+.dark-warning{
+    color: #A00;
+}
+
+.dark-input{
+    background-color: $darkmode-primary-bgColor;
+    border: 1px solid $darkmode-primary-baseColor;
+    color: lighten($darkmode-primary-textColor, 50%);    
+}
+
+.dark-button{
+    background-color: darken($darkmode-primary-bgColor, 10%);
+    border: 1px solid lighten($darkmode-primary-baseColor, 15%);
+    color: $darkmode-primary-textColor;
+
+    &:hover{
+        border: 1px solid $darkmode-highlight;
+        color: $darkmode-highlight;
+    }
+
+    &:disabled{
+        background-color: lighten($darkmode-primary-bgColor, 3%);
+        border: 1px solid $darkmode-primary-baseColor;
+        color: lighten($darkmode-primary-baseColor, 40%);
+    }
+}
+
+.dark-button-active{
+    background-color: darken($darkmode-primary-bgColor, 10%);
+    border: 1px solid $darkmode-highlight;
+    color: $darkmode-primary-color;
+
+    &:hover{
+        border: 1px solid $darkmode-highlight;
+        color: $darkmode-highlight;
+    }
+}
+
+.dark-color-palette{
+    background-color: $darkmode-primary-bgColor;
+    border: none;
+    color: $darkmode-primary-color;
+}
+
+.dark-color-palette-active{
+    background-color: $darkmode-primary-bgColor;
+    border: 1px solid white;
+}
+
+.dark-color-palette-add{
+    background-color: darken($darkmode-primary-bgColor, 3%);
+    border: 1px solid $darkmode-primary-color;
+    color: $darkmode-primary-color;
+}
+
+.dark-slider{
+    background-color: darken($darkmode-primary-bgColor, 5%);
+    color: $darkmode-primary-color;
+
+    &::-webkit-slider-thumb{
+        background-color: $darkmode-primary-color;
+    }
+
+    &::-moz-range-thumb{
+        background-color: $darkmode-primary-color;
+    }
+}
+
+.dark-switch{
+    background-color: darken($darkmode-primary-bgColor, 5%);
+    border: 1px solid $darkmode-primary-baseColor;
+}
+
+.dark-switch-active{
+    background-color: darken($darkmode-primary-bgColor, 5%);
+    border: 1px solid $darkmode-primary-baseColor;
+}
+
+.dark-switch-inside{
+    background-color: black;
+}
+
+.dark-switch-inside-active{
+    background-color: $darkmode-primary-color;
+}

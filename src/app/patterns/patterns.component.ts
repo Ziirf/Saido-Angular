@@ -12,12 +12,15 @@ export class PatternsComponent implements OnInit {
 
   patternsArray : PatternModel[];
   selectedPattern : PatternModel;
-  editProperties : boolean = false;
+  editProperties: boolean = false;
+  data: DataService;
 
   constructor(
-    private data: DataService,
+    private _data: DataService,
     private httpService: HttpService
-  ) { }
+  ) { 
+    this.data = _data;
+  }
 
   ngOnInit(): void {
     // Makes an array of the patterns.
