@@ -1,26 +1,72 @@
 @import '../../scss/variables.scss';
 
+:host{
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: 1fr auto
+}
+
+.container{
+  height: 100%;
+  
+  padding: 10px;
+  box-sizing: border-box;
+  justify-self: center;
+
+  app-colorwheel{
+    padding-bottom: 10px;
+  }
+
+}
+
+p{
+  margin: 5px 0px;
+  padding: 0px 20px;
+}
+
+app-slider{
+  box-sizing: border-box;
+  display: block;
+  margin: auto;
+  padding: 0px 10px;
+}
+
+
+.pattern{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 2fr) 1fr;
+  grid-gap: 5px;
+  
+  #editBtn{
+      grid-column: 1 / 4;
+  }
+}
+
+/*
 #colorWrap{
   height: 100%;
-  margin-top: 10px;
+  padding-top: 10px;
   box-sizing: border-box;
 
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr auto;
   justify-items: center;
 
   .colorWheel{
     display: block;
   }
 
-  app-slider{
-    width: 300px;
-    margin-top: 10px; 
-  }
-
   app-color-palette{
     width: 300px;
     margin-top: 15px;
+  }
+
+  app-slider{
+    display: block;
+    width: 100%;
+    padding: 0px 10px;
   }
 }
 
@@ -38,3 +84,4 @@ app-slider ::ng-deep .slider{
     border: 4px $PrimaryColor solid;
   }
 }
+*/

@@ -1,14 +1,16 @@
-import { Injectable, NgModule } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class HttpService {
-
-  constructor() { }
+export class HttpService{
 
   public latestRequest : string;
-  public isOnline : boolean = false;
+  public isOnline: boolean = false;
+  
+  constructor() { }
+
+
 
   togglePower() : void {
     let request = new XMLHttpRequest();
@@ -25,9 +27,9 @@ export class HttpService {
     }
   }
 
-  postRequest(id: number, data: string) : void {
+  postRequest(id: number, data: string, brightness: string) : void {
     let request = new XMLHttpRequest();
-    this.latestRequest = `?${id}=${data}`;
+    this.latestRequest = `?${id}=${data + brightness}`;
     
     if(this.isOnline){
       request.open('POST', this.latestRequest || `?${id}=${data}`);

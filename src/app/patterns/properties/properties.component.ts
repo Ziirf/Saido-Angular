@@ -33,7 +33,7 @@ export class PropertiesComponent {
   // Listens to changes of the properties in this component.
   @HostListener('change')
   ngOnChanges() : void {
-    this.httpService.postRequest(this.pattern.id, this.hexConvert.intArrayToHex(this.pattern.parameters));
+    this.httpService.postRequest(this.pattern.id, this.hexConvert.intArrayToHex(this.pattern.parameters), this.hexConvert.intToHex(this.data.brightness));
   }
 
   // Exit this component.

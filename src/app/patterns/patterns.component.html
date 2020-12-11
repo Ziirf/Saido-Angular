@@ -13,11 +13,12 @@
 </div>
 
 <div>
+
     <p [ngClass]="data.style.text">Brightness</p>
 
-    <app-slider class="app-slider" 
-        min=0 max=100 value=0 
-        (valueChangedEvent)="brightness.value = $event" 
+    <app-slider 
+        [min]=0 [max]=100 [(value)]=data.brightness 
+        (valueChangedEvent)="data.brightnessChange($event)" 
         #brightness>
     </app-slider>
 

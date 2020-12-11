@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpService } from '../services/http-service.service';
 import { HexService } from '../services/hex.service';
 import { DataService } from '../services/data.service';
@@ -13,8 +13,7 @@ export class HomeComponent{
   
   // Variables of this class.
   data: DataService;
-  colorPicker : iro.ColorPicker;
-  color: iro.Color
+  //color: iro.Color
 
   constructor(
     private httpService: HttpService,
@@ -24,20 +23,25 @@ export class HomeComponent{
     this.data = _data;
   }
   
+  colorChange(color: iro.Color) {
+    color.value = this.data.brightness;
+    this.data.color = color;
 
-
-  colorChange(color: iro.Color){
-    this.color = color;
     let hue = Math.round((color.hsv.h / 360) * 255);         // Hue value converted from 1-255 from 1-360.
     let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
     let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
     
-    this.httpService.postRequest(1, this.hexConvert.intToHex(hue, sat, val));
+    this.httpService.postRequest(1, this.hexConvert.intToHex(hue, sat), this.hexConvert.intToHex(val));
   }
 
   colorSelected(color: iro.Color){
-    this.color.hue = color.hue;
-    this.color.saturation = color.saturation;
+    this.data.color.hue = color.hue;
+    this.data.color.saturation = color.saturation;
+  }
+
+  brightnessChange(brightness: number) {
+    this.data.brightness = brightness;
+    //this.color.value = brightness;
   }
 }
 

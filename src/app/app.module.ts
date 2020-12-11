@@ -21,6 +21,7 @@ import { HexService } from './services/hex.service';
 import { ColorwheelComponent } from './components/colorwheel/colorwheel.component';
 import { ToggleSwitchComponent } from './components/toggle-switch/toggle-switch.component';
 import { FormsModule } from '@angular/forms';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     HttpService, 
-    HexService
+    HexService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

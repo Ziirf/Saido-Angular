@@ -36,5 +36,4 @@ export class ApperanceComponent {
     this._data.style = this._data.styles[3];
     this.closeWindowEvent.emit(null);
   }
-
 }

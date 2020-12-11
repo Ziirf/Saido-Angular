@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import '../../models/patterns.model';
 import { HttpService } from '../services/http-service.service';
+import { HexService } from '../services/hex.service';
 
 @Component({
   selector: 'app-patterns',
@@ -17,7 +18,8 @@ export class PatternsComponent implements OnInit {
 
   constructor(
     private _data: DataService,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private hexService: HexService
   ) { 
     this.data = _data;
   }
@@ -32,7 +34,7 @@ export class PatternsComponent implements OnInit {
   public clickPattern(pattern: PatternModel) : void{
     this.selectedPattern = pattern;
 
-    this.httpService.postRequest(pattern.id, 'asd');
+    this.httpService.postRequest(pattern.id, 'todo', this.hexService.intToHex(this.data.brightness));
     //var request = new XMLHttpRequest();
     //request.open('POST',`?${ pattern.id }`);
     //request.send();

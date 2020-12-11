@@ -30,9 +30,7 @@ export class ColorPaletteComponent{
   @Output()
   public onSelectedColor = new EventEmitter<object>();
 
-  constructor(
-    private _data: DataService
-  ) {
+  constructor(private _data: DataService) {
     this.data = _data;
   }
 

@@ -6,34 +6,34 @@ import '../../models/style.model'
 @Injectable({
   providedIn: 'root'
 })
-export class DataService implements OnInit {
+export class DataService {
 
   colorPalette: iro.Color[];
+  color: iro.Color;
+  brightness: number = 100;
+
   patternsArray: PatternModel[];
+  
   styles: Style[];
   style: Style;
-
-  ngOnInit(): void {
-    
-  }
 
   constructor() {
     this.colorPalette = [
     ];
 
     this.patternsArray = [
-      { id: 11, name: "Rainbow", parameters: [1, 25] },
-      { id: 12, name: "Cyclone", parameters: [90] },
-      { id: 13, name: "Jungle", parameters: [90] },
-      { id: 14, name: "Fireworks", parameters: [90] },
-      { id: 15, name: "Balls", parameters: [90] },
-      { id: 16, name: "Strobe", parameters: [90] },
-      { id: 17, name: "Meteor", parameters: [90] },
+      { id: 11, name: "Rainbow",    parameters: [1, 25] },
+      { id: 12, name: "Cyclone",    parameters: [90] },
+      { id: 13, name: "Jungle",     parameters: [90] },
+      { id: 14, name: "Fireworks",  parameters: [90] },
+      { id: 15, name: "Balls",      parameters: [90] },
+      { id: 16, name: "Strobe",     parameters: [90] },
+      { id: 17, name: "Meteor",     parameters: [90] },
       { id: 18, name: "Half-Light", parameters: [90] },
-      { id: 19, name: "Blend", parameters: [90] },
-      { id: 20, name: "Fire", parameters: [90] },
-      { id: 21, name: "Disco", parameters: [90] },
-      { id: 22, name: "Siren", parameters: [90] }
+      { id: 19, name: "Blend",      parameters: [90] },
+      { id: 20, name: "Fire",       parameters: [90] },
+      { id: 21, name: "Disco",      parameters: [90] },
+      { id: 22, name: "Siren",      parameters: [90] }
     ];
 
     this.styles = [
@@ -129,7 +129,9 @@ export class DataService implements OnInit {
     this.style = this.styles[1];
   }
 
-  setStyle(index: string) {
-    this.style = this.styles[index];
+  brightnessChange(brightness: number) {
+    this.brightness = brightness;
+    this.color.value = brightness;
+    //this.color.value = brightness;
   }
 }

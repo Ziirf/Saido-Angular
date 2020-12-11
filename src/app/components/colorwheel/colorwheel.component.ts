@@ -9,7 +9,7 @@ import iro from '@jaames/iro';
 export class ColorwheelComponent implements OnInit, OnDestroy {
 
   @Input()
-  color: iro.Color = new iro.Color({h:0, s:0, v:100});
+  color: iro.Color = new iro.Color({ h: 0, s: 0, v: 100 });
 
   @Output()
   colorChangeEvent: EventEmitter<iro.Color> = new EventEmitter;
