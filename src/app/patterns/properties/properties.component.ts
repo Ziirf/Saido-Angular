@@ -1,8 +1,9 @@
 import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
-import { HttpService } from '../../services/http-service.service';
-import { HexService } from '../../services/hex.service';
-import '../../../models/patterns.model';
-import { DataService } from '../../services/data.service';
+import { HttpService } from 'src/app/services/http-service.service';
+import { HexService } from 'src/app/services/hex.service';
+import { DataService } from 'src/app/services/data.service';
+
+import { PatternModel } from 'src/models/patterns.model';
 
 @Component({
   selector: 'app-properties',
@@ -25,7 +26,7 @@ export class PropertiesComponent {
   constructor(
     private httpService: HttpService,
     private hexConvert: HexService,
-    private _data: DataService
+    _data: DataService
   ) { 
     this.data = _data;
   }

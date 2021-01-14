@@ -21,7 +21,7 @@ export class ColorwheelComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    // Instanciates the Colorwheel.
+    // Instansiates the Colorwheel.
     this.colorwheel = iro.ColorPicker("#colorWheel", {
       color: this.color,
       layout:  [
@@ -38,14 +38,15 @@ export class ColorwheelComponent implements OnInit, OnDestroy {
     this.colorChangeEvent.emit(this.colorwheel.color);
 
     // Add an event listener.
-    this.colorwheel.on('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
+    this.colorwheel.on('color:change', (color: iro.Color) => this.ngZone.run(() => this.onColorChange(color)));
   }
 
   // Remove the eventlistener on destruction.
   ngOnDestroy(): void{
-    this.colorwheel.off('color:change', (color) => this.ngZone.run(() => this.onColorChange(color)));
+    this.colorwheel.off('color:change', (color: iro.Color) => this.ngZone.run(() => this.onColorChange(color)));
   }
 
+  // Event on color change
   onColorChange(color: iro.Color) : void {
     this.colorChangeEvent.emit(color);
   }

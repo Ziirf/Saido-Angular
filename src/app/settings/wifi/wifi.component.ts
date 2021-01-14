@@ -1,5 +1,4 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Data } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { HttpService } from 'src/app/services/http-service.service';
 
@@ -24,12 +23,13 @@ export class WifiComponent{
     this.data = _data;
   }
 
+  // Sends a http request with the new wifi configs.
   okBtn(): void {
-    console.log(this.ssid + ' ' + this.password)
-    this.httpService.postSettingRequst(1000, null)
+    this.httpService.postSettingRequst(1000, `todo:wifi`)
     this.closeWindowEvent.emit(null);
   }
 
+  // Closes pop up.
   cancelBtn() : void {
     this.closeWindowEvent.emit(null);
   }

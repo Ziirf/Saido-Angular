@@ -18,21 +18,24 @@ export class LedCountComponent{
 
   constructor(
     private httpService: HttpService,
-    private _data: DataService
+    _data: DataService
   ) { 
     this.data = _data;
   }
 
-  okBtn(): void{
-    this.httpService.postSettingRequst(1000, null);
+  // Sends a http request of the for the led changes.
+  okBtn() : void{
+    this.httpService.postSettingRequst(1000, `todo:led`);
     this.closeWindowEvent.emit(null);
   }
 
+  // Closes the pop up.
   cancelBtn() : void{
     this.closeWindowEvent.emit(null);
   }
 
-  checkForNumber()  : boolean {
+  // checks if the input is valid number above 0.
+  checkForNumber() : boolean {
     let value : number = parseInt(this.ledCount);
     return isNaN(parseInt(this.ledCount)) || value < 0;
   }

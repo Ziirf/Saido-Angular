@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HttpService } from '../services/http-service.service';
-import { HexService } from '../services/hex.service';
-import { DataService } from '../services/data.service';
+import { HttpService } from 'src/app/services/http-service.service';
+import { HexService } from 'src/app/services/hex.service';
+import { DataService } from 'src/app/services/data.service';
 import iro from '@jaames/iro';
 
 @Component({
@@ -11,19 +11,19 @@ import iro from '@jaames/iro';
 })
 export class HomeComponent{
   
-  // Variables of this class.
   data: DataService;
-  //color: iro.Color
 
   constructor(
     private httpService: HttpService,
-    private hexConvert: HexService,
-    private _data: DataService
+    private hexService: HexService,
+    _data: DataService
   ) { 
     this.data = _data;
   }
   
+  // Fires whenever the color is changed in the colorwheel.
   colorChange(color: iro.Color) {
+    // Sets the brightness of the selected color and saves the color in memory.
     color.value = this.data.brightness;
     this.data.color = color;
 
@@ -31,17 +31,21 @@ export class HomeComponent{
     let sat = Math.round((color.hsv.s / 100) * 255);         // Saturation value converted from 1-255 from 1-100.
     let val = Math.round((color.hsv.v / 100) * 255);         // Value converted from 1-255 from 1-100.
     
-    this.httpService.postRequest(1, this.hexConvert.intToHex(hue, sat), this.hexConvert.intToHex(val));
+    // Sends a http request to the esp32 to change the LED lights.
+    this.httpService.postRequest(1, this.hexService.intToHex(hue, sat), this.hexService.intToHex(val));
   }
 
+  // Fires when a color is selected from the color palette, changes the hue and saturation of the color -
+  // but keeps its brightness. (will also fire colorChange since the color changed in the wheel)
   colorSelected(color: iro.Color){
     this.data.color.hue = color.hue;
     this.data.color.saturation = color.saturation;
   }
 
+  // Fires when the brightness slider is changed, it changes the brightness of the color -
+  // but keeps its hue and saturation. (will also fire colorChange since the color changed in the wheel)
   brightnessChange(brightness: number) {
     this.data.brightness = brightness;
-    //this.color.value = brightness;
   }
 }
 

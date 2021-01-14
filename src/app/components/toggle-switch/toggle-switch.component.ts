@@ -16,18 +16,19 @@ export class ToggleSwitchComponent {
   @Input("color")
   color: string = "white";
 
-  @Output("value")
+  @Output("toggle")
   onSliderChange: EventEmitter<boolean> = new EventEmitter;
 
-  value: boolean = false;
+  toggle: boolean = false;
 
-  constructor(private _data: DataService) {
+  constructor(_data: DataService) {
     this.data = _data;
-    this.onSliderChange.emit(this.value);
+    this.onSliderChange.emit(this.toggle);
   }
 
-  sliderChange() {
-    this.value = !this.value;
-    this.onSliderChange.emit(this.value);
+  // Changes the toggle state, and returns the state of the toggle over an event emitter.
+  sliderChange() : void {
+    this.toggle = !this.toggle;
+    this.onSliderChange.emit(this.toggle);
   }
 }

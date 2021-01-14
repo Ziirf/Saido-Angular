@@ -30,10 +30,11 @@ export class ColorPaletteComponent{
   @Output()
   public onSelectedColor = new EventEmitter<object>();
 
-  constructor(private _data: DataService) {
+  constructor(_data: DataService) {
     this.data = _data;
   }
 
+  // Linked via html
   // Adds the selected color from the colorwheel to the colorArray.
   private addColor() : void {
     if(this.inputColor){
@@ -41,6 +42,7 @@ export class ColorPaletteComponent{
     }
   }
 
+  // Linked via html
   // Move the Colorwheel cursor to the saved color.
   private selectedColor(color: iro.Color, index: number) : void {
     this.selectedColorIndex = index;

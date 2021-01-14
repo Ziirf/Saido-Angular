@@ -1,21 +1,21 @@
-import { Injectable, OnInit } from '@angular/core';
 import iro from '@jaames/iro';
-import '../../models/patterns.model'
-import '../../models/style.model'
+import { Injectable } from '@angular/core';
+
+import { PatternModel } from 'src/models/patterns.model';
+import { StyleModel } from 'src/models/style.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-
   colorPalette: iro.Color[];
-  color: iro.Color;
+  color: iro.Color = new iro.Color();
   brightness: number = 100;
 
   patternsArray: PatternModel[];
   
-  styles: Style[];
-  style: Style;
+  styles: StyleModel[];
+  style: StyleModel;
 
   constructor() {
     this.colorPalette = [

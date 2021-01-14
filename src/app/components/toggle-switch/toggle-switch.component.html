@@ -2,13 +2,13 @@
     <input type="checkbox">
 
     <span class="slider"
-        [ngClass]="!value ? data.style.switch : data.style.switchActive"
+        [ngClass]="!toggle ? data.style.switch : data.style.switchActive"
         (click)="sliderChange()">
     </span>
       
     <span class="slider-inside"
-        [ngClass]="!value ? data.style.switchInside : data.style.switchInsideActive"
-        [ngStyle]="{'left': !value ? '4px' : '50px'}"
+        [ngClass]="!toggle ? data.style.switchInside : data.style.switchInsideActive"
+        [ngStyle]="{'left': !toggle ? '4px' : '50px'}"
         (click)="sliderChange()">
     </span>
 </label>

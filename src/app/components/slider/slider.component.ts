@@ -10,6 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 export class SliderComponent {
 
   data: DataService;
+  
   // The lowest value of the slider
   @Input("min")
   public minValue : number = 0;
@@ -40,11 +41,12 @@ export class SliderComponent {
     this.valueChangedEvent.emit(this.selectedValue);
   }
 
-  // Changes the style of the background to a gradient
+  // Changes the style of the background to a gradient (Not used in current version)
   setStyle() : object {
     var tempColor = new iro.Color(this.color);
+    tempColor.alpha = 0.5;
     tempColor.value = 100;
-    var style ={'background': this.color != null ? `linear-gradient(90deg, rgba(0,0,0,1) 0%, ${tempColor.rgbString} 100%)` : ''}
+    var style ={'background': this.color != null ? `linear-gradient(90deg, rgba(0,0,0,0.5) 0%, ${tempColor.rgbaString} 100%)` : ''}
     return style;
   }
 }

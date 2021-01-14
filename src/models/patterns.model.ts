@@ -1,4 +1,4 @@
-class PatternModel {
+export class PatternModel {
 
     //Fields 
     id: number;

@@ -1,4 +1,4 @@
-class Style {
+export class StyleModel {
 
     body: string;
     header: string;

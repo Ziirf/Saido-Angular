@@ -21,11 +21,13 @@ export class RebootComponent {
     this.data = _data;
   }
 
+  // Sends a http request that tells the ESP to reboot.
   yesBtn(): void {
-    this.httpService.postSettingRequst(1000, null);
+    this.httpService.postSettingRequst(1000, `todo:reboot`);
     this.closeWindowEvent.emit(null);
   }
 
+  // Closes the pop up.
   noBtn() : void {
     this.closeWindowEvent.emit(null);
   }

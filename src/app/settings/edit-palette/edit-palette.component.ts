@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-edit-palette',

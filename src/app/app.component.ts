@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { DataService } from './services/data.service';
-import { HttpService } from './services/http-service.service';
+import { DataService } from 'src/app/services/data.service';
+import { HttpService } from 'src/app/services/http-service.service';
 
 @Component({
   selector: 'app-root',
@@ -15,13 +15,13 @@ export class AppComponent implements OnInit{
   
   constructor(
     private httpService: HttpService,
-    private _data: DataService
+    _data: DataService
   ) { 
     this.data = _data;
   }
 
   // Toggles the powerswitch
-  togglePower() : void {
+  togglePower(): void {
     this.httpService.togglePower();
   }
 

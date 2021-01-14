@@ -1,6 +1,7 @@
 <div class="container">
 
   <app-colorwheel 
+    [color]="data.color"
     (colorChangeEvent)="colorChange($event)">
   </app-colorwheel>
 
@@ -18,7 +19,7 @@
   <p [ngClass]="data.style.text">Brightness</p>
 
   <app-slider
-    [min]=0 [max]=100 [(value)]="data.color.value" 
+    [min]=0 [max]=100 [(value)]="data.color.value"
     (valueChangedEvent)="data.brightnessChange($event)">
   </app-slider>
   

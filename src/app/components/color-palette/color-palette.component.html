@@ -1,5 +1,6 @@
 <div id="colorPalette" *ngIf="colors">
 
+    <!-- Adds a button for each color which is saved in memory -->
     <ng-template ngFor let-color [ngForOf]="colors"; let-i="index">
 
         <button class="item"
@@ -10,6 +11,7 @@
 
     </ng-template>
 
+    <!-- Adds a button if there is space for more colors, which will save currently selected color to memory -->
     <button class="item"
         [ngClass]=data.style.colorPaletteAdd
         *ngIf="colors.length < 15 && inputColor != null" 

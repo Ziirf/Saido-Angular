@@ -13,27 +13,13 @@ export class ApperanceComponent {
   @Output() 
   closeWindowEvent = new EventEmitter<string>();
 
-  constructor(private _data: DataService) { 
+  constructor(_data: DataService) { 
     this.data = _data;
   }
 
-  brightBtn(): void{
-    this._data.style = this._data.styles[0];
-    this.closeWindowEvent.emit(null);
-  }
-
-  darkBtn() : void{
-    this._data.style = this._data.styles[1];
-    this.closeWindowEvent.emit(null);
-  }
-
-  partyBtn() : void{
-    this._data.style = this._data.styles[2];
-    this.closeWindowEvent.emit(null);
-  }
-
-  terminalBtn() : void{
-    this._data.style = this._data.styles[3];
+  // Changes style upon fire.
+  styleBtn(index: number): void{
+    this.data.style = this.data.styles[index];
     this.closeWindowEvent.emit(null);
   }
 }
